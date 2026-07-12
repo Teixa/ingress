@@ -1,10 +1,10 @@
-package com.teixaa.clients;
+package com.teixaa.accounts;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ClientsApplicationTests {
+class AccountsApplicationTests {
 
 	@Test
 	void contextLoads() {
