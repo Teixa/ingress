@@ -32,6 +32,7 @@ public class CustomerDto {
     @Schema(
             description = "Mobile Number of the customer", example = "93454321231"
     )
+    @NotEmpty(message = "number can not be a null or empty")
     @Pattern(regexp = "(^$|[0-9]{11})", message = "Mobile number must be 11 digits, only numbers (XX) XXXXXX-XXXX")
     private String mobileNumber;
 }

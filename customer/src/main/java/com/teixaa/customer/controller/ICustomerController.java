@@ -11,6 +11,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -74,5 +75,5 @@ public interface ICustomerController {
     }
     )
     @PostMapping(path = "createCustomerDetails")
-    public ResponseEntity<ResponseDto> createCustomer (@RequestBody CustomerDto customerDto);
+    public ResponseEntity<ResponseDto> createCustomer (@Valid @RequestBody CustomerDto customerDto);
 }

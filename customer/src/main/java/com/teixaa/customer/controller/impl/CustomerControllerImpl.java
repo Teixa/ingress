@@ -25,16 +25,6 @@ public class CustomerControllerImpl implements ICustomerController {
 
 
 
-//    @GetMapping(path = "fetchCustomerDetails")
-//    public ResponseEntity<CustomerDto> fetchCustomerDetails(@RequestParam
-//                                                                @Pattern(
-//                                                                        regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
-//                                                                        message = "The provided email address format is invalid"
-//                                                                )
-//                                                                String email) {
-//        return ResponseEntity.status(HttpStatus.OK).body(ICustomerService.fetchCustomerDetails(email));
-//    }
-
     @Override
     public ResponseEntity<CustomerDto> fetchCustomerDetails(String email) {
         return ResponseEntity.status(HttpStatus.OK).body(ICustomerService.fetchCustomerDetails(email));
