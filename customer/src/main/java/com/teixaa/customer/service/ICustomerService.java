@@ -2,7 +2,7 @@ package com.teixaa.customer.service;
 
 import com.teixaa.customer.dto.CustomerDto;
 
-public interface CustomerService {
+public interface ICustomerService {
 
     /**
      * @param email
