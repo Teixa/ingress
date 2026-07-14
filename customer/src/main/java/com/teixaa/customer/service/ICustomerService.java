@@ -11,5 +11,5 @@ public interface ICustomerService {
      */
     CustomerDto fetchCustomerDetails(String email);
 
-    CustomerDto createCustomer(CustomerDto customerDto);
+    void createCustomer(CustomerDto customerDto);
 }

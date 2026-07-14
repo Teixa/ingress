@@ -28,14 +28,13 @@ public class CustomerServiceImpl implements ICustomerService {
     } //adicionar dps os campos de data
 
     @Override
-    public CustomerDto createCustomer(CustomerDto customerDto) {
+    public void createCustomer(CustomerDto customerDto) {
         Customer customer = CustomerMapper.mapToCustomer(customerDto, new Customer());
         Optional<Customer> optionalCustomer = customerRepository.findByEmail(customerDto.getEmail());
         if(optionalCustomer.isPresent()){
             throw new CustomerAlreadyExistsException("Customer already registered with given mobileNumber " + customerDto.getMobileNumber());
         }
-        Customer saved = customerRepository.save(customer);
-        return CustomerMapper.mapToCustomerDto(saved, new CustomerDto());
+        customerRepository.save(customer);
     }
 
 
