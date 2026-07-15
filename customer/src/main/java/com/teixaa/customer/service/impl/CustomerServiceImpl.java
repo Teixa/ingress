@@ -32,9 +32,20 @@ public class CustomerServiceImpl implements ICustomerService {
         Customer customer = CustomerMapper.mapToCustomer(customerDto, new Customer());
         Optional<Customer> optionalCustomer = customerRepository.findByEmail(customerDto.getEmail());
         if(optionalCustomer.isPresent()){
-            throw new CustomerAlreadyExistsException("Customer already registered with given mobileNumber " + customerDto.getMobileNumber());
+            throw new CustomerAlreadyExistsException("Customer already registered with given email " + customerDto.getEmail());
         }
         customerRepository.save(customer);
+    }
+
+    @Override
+    public boolean updateCustomer(CustomerDto customerDto) {
+        boolean isUpdated = false;
+        Customer customer = customerRepository.findByEmail(customerDto.getEmail()).orElseThrow(
+                () -> new ResourceNotFoundException("Customer", "email", customerDto.getEmail())
+        );
+        customerRepository.save(customer);
+        isUpdated = true;
+        return isUpdated;
     }
 
 

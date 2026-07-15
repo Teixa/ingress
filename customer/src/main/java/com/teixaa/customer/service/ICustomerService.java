@@ -12,4 +12,6 @@ public interface ICustomerService {
     CustomerDto fetchCustomerDetails(String email);
 
     void createCustomer(CustomerDto customerDto);
+
+    boolean updateCustomer(CustomerDto customerDto);
 }

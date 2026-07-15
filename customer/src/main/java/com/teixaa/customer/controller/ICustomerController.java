@@ -74,6 +74,32 @@ public interface ICustomerController {
             )
     }
     )
-    @PostMapping(path = "createCustomerDetails")
+    @PostMapping(path = "createCustomer")
     public ResponseEntity<ResponseDto> createCustomer (@Valid @RequestBody CustomerDto customerDto);
+
+    @Operation(
+            summary = "Update Customer Details REST API",
+            description = "REST API to update Customer details based on a email"
+    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "HTTP Status OK"
+            ),
+            @ApiResponse(
+                    responseCode = "417",
+                    description = "Expectation Failed"
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "HTTP Status Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
+            )
+    }
+    )
+    @PutMapping("/update")
+    public ResponseEntity<ResponseDto> updateCustomer(@RequestBody CustomerDto customerDto);
+
 }

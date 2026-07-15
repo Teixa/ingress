@@ -1,5 +1,6 @@
 package com.teixaa.customer.controller.impl;
 
+import com.teixaa.customer.constants.CustomerConstants;
 import com.teixaa.customer.controller.ICustomerController;
 import com.teixaa.customer.dto.CustomerDto;
 import com.teixaa.customer.dto.ResponseDto;
@@ -33,7 +34,21 @@ public class CustomerControllerImpl implements ICustomerController {
     @Override
     public ResponseEntity<ResponseDto> createCustomer (CustomerDto customerDto) {
         ICustomerService.createCustomer(customerDto);
-        return ResponseEntity.status(HttpStatus.OK).body(new ResponseDto("201", "Customer Created"));
+        return ResponseEntity.status(HttpStatus.OK).body(new ResponseDto(CustomerConstants.STATUS_201, CustomerConstants.MESSAGE_201));
+    }
+
+    @Override
+    public ResponseEntity<ResponseDto> updateCustomer(CustomerDto customerDto) {
+        boolean isUpdated = ICustomerService.updateCustomer(customerDto);
+        if(isUpdated) {
+            return ResponseEntity
+                    .status(HttpStatus.OK)
+                    .body(new ResponseDto(CustomerConstants.STATUS_200, CustomerConstants.MESSAGE_200));
+        }else{
+            return ResponseEntity
+                    .status(HttpStatus.EXPECTATION_FAILED)
+                    .body(new ResponseDto(CustomerConstants.STATUS_417, CustomerConstants.MESSAGE_417_UPDATE));
+        }
     }
 
 
