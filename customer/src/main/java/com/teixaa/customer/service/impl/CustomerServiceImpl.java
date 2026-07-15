@@ -40,10 +40,12 @@ public class CustomerServiceImpl implements ICustomerService {
     @Override
     public boolean updateCustomer(CustomerDto customerDto) {
         boolean isUpdated = false;
-        Customer customer = customerRepository.findByEmail(customerDto.getEmail()).orElseThrow(
+        Customer customerFound = customerRepository.findByEmail(customerDto.getEmail()).orElseThrow(
                 () -> new ResourceNotFoundException("Customer", "email", customerDto.getEmail())
         );
-        customerRepository.save(customer);
+        Customer customerToSave = CustomerMapper.mapToCustomer(customerDto, new Customer());
+        customerToSave.setCustomerId(customerFound.getCustomerId());
+        customerRepository.save(customerToSave);
         isUpdated = true;
         return isUpdated;
     }
