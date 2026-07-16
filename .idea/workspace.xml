@@ -4,38 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8edd0f62-611e-4fac-a32d-bb2e982acd5c" name="Changes" comment="adiciona ms Events">
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/audit/AuditorAwareImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/constants/EventCategory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/constants/EventStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/constants/SessionStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/IEventController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/impl/EventControllerImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/converter/DurationConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/dto/EventDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/dto/ResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/dto/request/CreateEventRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/dto/request/UpdateEventRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/dto/response/ErrorResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/dto/response/EventResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/entity/BaseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/entity/CompanyOrganizer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/entity/Event.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/entity/Session.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/exception/CompanyOrganizerNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/mapper/EventMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/repository/CompanyOrganizerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/repository/EventRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/ICompanyOrganizerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/IEventService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/impl/CompanyOrganizerServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/impl/EventServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/src/main/resources/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="8edd0f62-611e-4fac-a32d-bb2e982acd5c" name="Changes" comment="cria funcionalidade de salvar eventos">
+      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/ICompanyOrganizerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/ISessionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/impl/SessionControllerImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/events/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/EventsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/EventsApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,9 +19,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Exception" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -179,14 +152,23 @@
       <option name="project" value="LOCAL" />
       <updated>1784079534941</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="cria funcionalidade de salvar eventos">
+      <option name="closed" value="true" />
+      <created>1784162392899</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1784162392899</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="adiciona updateCustomer" />
     <MESSAGE value="ajusta updateCustomer" />
     <MESSAGE value="adiciona ms Events" />
-    <option name="LAST_COMMIT_MESSAGE" value="adiciona ms Events" />
+    <MESSAGE value="cria funcionalidade de salvar eventos" />
+    <option name="LAST_COMMIT_MESSAGE" value="cria funcionalidade de salvar eventos" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
