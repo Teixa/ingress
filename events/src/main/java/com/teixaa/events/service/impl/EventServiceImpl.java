@@ -40,3 +40,25 @@ public class EventServiceImpl implements IEventService {
         eventRepository.save(event);
     }
 }
+
+//INSERT INTO company_organizers (
+//        id,
+//        company_name,
+//        cnpj,
+//        email,
+//        phone_number,
+//        created_at,
+//        created_by,
+//        updated_at,
+//        updated_by
+//        ) VALUES (
+//RANDOM_UUID(),
+//    'Nome da Empresa Ltda',
+//            '12.345.678/0001-90',
+//            'contato@empresa.com',
+//            '+55 11 99999-9999',
+//CURRENT_TIMESTAMP,
+//        'sistema_admin',
+//CURRENT_TIMESTAMP,
+//        'sistema_admin'
+//        );
