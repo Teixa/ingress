@@ -4,10 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8edd0f62-611e-4fac-a32d-bb2e982acd5c" name="Changes" comment="adiciona updateCustomer">
+    <list default="true" id="8edd0f62-611e-4fac-a32d-bb2e982acd5c" name="Changes" comment="adiciona ms Events">
+      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/audit/AuditorAwareImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/constants/EventCategory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/constants/EventStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/constants/SessionStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/IEventController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/impl/EventControllerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/converter/DurationConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/dto/EventDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/dto/ResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/dto/request/CreateEventRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/dto/request/UpdateEventRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/dto/response/ErrorResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/dto/response/EventResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/entity/BaseEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/entity/CompanyOrganizer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/entity/Event.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/entity/Session.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/exception/CompanyOrganizerNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/mapper/EventMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/repository/CompanyOrganizerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/repository/EventRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/ICompanyOrganizerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/IEventService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/impl/CompanyOrganizerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/impl/EventServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/events/src/main/resources/schema.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customer/src/main/java/com/teixaa/customer/service/impl/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/customer/src/main/java/com/teixaa/customer/service/impl/CustomerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/events/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/events/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/EventsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/EventsApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/events/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,25 +45,28 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
+        <option value="Exception" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Teixa"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Teixa&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Teixa/ingress.git",
-    "accountId": "3f69764b-c4d5-4215-bfbe-2239d3780c8a"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Teixa/ingress.git&quot;,
+    &quot;accountId&quot;: &quot;3f69764b-c4d5-4215-bfbe-2239d3780c8a&quot;
   }
-}]]></component>
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -43,9 +74,12 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="3GVqaciaJtLgV6SWo49JkG1S4OA" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -56,12 +90,21 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.CustomerApplication.executor": "Debug",
+    "Spring Boot.EventsApplication.executor": "Debug",
     "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.teixaa.events.entity" />
+      <recent name="com.teixaa.events.dto" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.EventsApplication">
     <configuration name="CustomerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
       <module name="customer" />
@@ -76,8 +119,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="EventsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
+      <module name="events" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.teixaa.events.EventsApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.teixaa.events.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.EventsApplication" />
         <item itemvalue="Spring Boot.CustomerApplication" />
       </list>
     </recent_temporary>
@@ -105,12 +163,30 @@
       <option name="project" value="LOCAL" />
       <updated>1784079036229</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="ajusta updateCustomer">
+      <option name="closed" value="true" />
+      <created>1784079501984</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1784079501984</updated>
+    </task>
+    <task id="LOCAL-00003" summary="adiciona ms Events">
+      <option name="closed" value="true" />
+      <created>1784079534941</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1784079534941</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="adiciona updateCustomer" />
-    <option name="LAST_COMMIT_MESSAGE" value="adiciona updateCustomer" />
+    <MESSAGE value="ajusta updateCustomer" />
+    <MESSAGE value="adiciona ms Events" />
+    <option name="LAST_COMMIT_MESSAGE" value="adiciona ms Events" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -119,6 +195,11 @@
           <url>file://$PROJECT_DIR$/customer/src/main/java/com/teixaa/customer/service/impl/CustomerServiceImpl.java</url>
           <line>41</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/impl/EventServiceImpl.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

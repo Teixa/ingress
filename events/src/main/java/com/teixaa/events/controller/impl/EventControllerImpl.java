@@ -1,0 +1,47 @@
+package com.teixaa.events.controller.impl;
+
+import com.teixaa.events.controller.IEventController;
+
+import com.teixaa.events.dto.ResponseDto;
+import com.teixaa.events.dto.request.CreateEventRequestDto;
+import com.teixaa.events.service.IEventService;
+import jakarta.validation.Valid;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@Validated
+public class EventControllerImpl implements IEventController {
+
+    IEventService eventService;
+
+    public EventControllerImpl(IEventService eventService) {
+        this.eventService = eventService;
+    }
+
+    @Override
+    public ResponseEntity<ResponseDto> createEvent (@Valid @RequestBody CreateEventRequestDto createEventRequestDto) {
+        eventService.saveEvent(createEventRequestDto);
+        return null;
+    }
+
+}
+
+//Responsas:
+//Criar evento
+//Editar evento
+//Cancelar evento
+//Datas
+//Sessões
+//Organizadores
+
+//ex coldplay, dias 01/01/2027, 02/01/2027 e 04/01/2027 add hora tbm
+// organizador 30e
+// fazer crud completo
+
+//disparar kafka
+//EventoCriado
+//EventoAlterado
+//EventoCancelado
