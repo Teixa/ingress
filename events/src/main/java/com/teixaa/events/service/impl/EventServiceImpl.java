@@ -1,14 +1,21 @@
 package com.teixaa.events.service.impl;
 
+import com.teixaa.events.dto.response.EventResponseDto;
 import com.teixaa.events.enums.EventStatus;
 import com.teixaa.events.dto.request.CreateEventRequestDto;
 import com.teixaa.events.entity.CompanyOrganizer;
 import com.teixaa.events.entity.Event;
+import com.teixaa.events.exception.CompanyOrganizerNotFoundException;
+import com.teixaa.events.mapper.EventMapper;
 import com.teixaa.events.repository.EventRepository;
 import com.teixaa.events.service.ICompanyOrganizerService;
 import com.teixaa.events.service.IEventService;
+
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.UUID;
 
 @Service
 @AllArgsConstructor
@@ -18,6 +25,8 @@ public class EventServiceImpl implements IEventService {
     private ICompanyOrganizerService companyOrganizerService;
 
     private EventRepository eventRepository;
+
+    private EventMapper eventMapper;
 
     @Override
     public void saveEvent(CreateEventRequestDto createEventRequestDto) {
@@ -38,6 +47,17 @@ public class EventServiceImpl implements IEventService {
                 .build();
 
         eventRepository.save(event);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public EventResponseDto findById(UUID id) {
+
+        Event event = eventRepository.findById(id)
+                .orElseThrow(() ->
+                        new CompanyOrganizerNotFoundException("Company organizer", "uuid", id));
+
+        return eventMapper.toResponse(event);
     }
 }
 

@@ -8,4 +8,6 @@ import java.util.UUID;
 
 @Repository
 public interface CompanyOrganizerRepository extends JpaRepository<CompanyOrganizer, UUID> {
+
+    CompanyOrganizer findByEmail(String email);
 }

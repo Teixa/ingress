@@ -37,5 +37,9 @@ public class EventResponseDto {
 
     private LocalDateTime createdAt;
 
+    private String createdBy;
+
     private LocalDateTime updatedAt;
+
+    private String updatedBy;
 }

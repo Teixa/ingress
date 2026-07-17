@@ -3,6 +3,7 @@ package com.teixaa.events.controller;
 
 import com.teixaa.events.dto.ResponseDto;
 import com.teixaa.events.dto.request.CompanyOrganizerRequestDto;
+import com.teixaa.events.dto.response.CompanyOrganizerResponseDto;
 import com.teixaa.events.dto.response.ErrorResponseDto;
 import com.teixaa.events.dto.response.EventResponseDto;
 import io.swagger.v3.oas.annotations.Operation;
@@ -14,10 +15,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @Tag(
         name = "CRUD REST APIs for Company Organizers in Ingress",
@@ -46,7 +44,26 @@ public interface ICompanyOrganizerController {
             )
     }
     )
-    @PostMapping(path = "createEvent")
-    public ResponseEntity<ResponseDto> createEvent (@Valid @RequestBody CompanyOrganizerRequestDto companyOrganizerRequestDto);
+    @PostMapping(path = "createCompanyOrganizer")
+    ResponseEntity<ResponseDto> createCompanyOrganizer(@Valid @RequestBody CompanyOrganizerRequestDto companyOrganizerRequestDto);
 
+    @Operation(
+            summary = "Fetch Company Organizer details REST API",
+            description = "REST API to fetch Company Organizer details based on email"
+    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Http Status OK"
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "HTTP status Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
+            )
+    })
+    @GetMapping("/fetchCompanyOrganizer")
+    ResponseEntity<CompanyOrganizerResponseDto> fetchCompanyOrganizer(@Valid @RequestParam String email);
 }

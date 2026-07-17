@@ -5,6 +5,7 @@ import com.teixaa.events.controller.ICompanyOrganizerController;
 import com.teixaa.events.dto.ResponseDto;
 import com.teixaa.events.dto.request.CompanyOrganizerRequestDto;
 import com.teixaa.events.dto.request.CreateEventRequestDto;
+import com.teixaa.events.dto.response.CompanyOrganizerResponseDto;
 import com.teixaa.events.service.ICompanyOrganizerService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,9 +18,22 @@ public class CompanyOrganizerControllerImpl implements ICompanyOrganizerControll
 
     ICompanyOrganizerService companyOrganizerService;
 
+    public CompanyOrganizerControllerImpl(ICompanyOrganizerService companyOrganizerService) {
+        this.companyOrganizerService = companyOrganizerService;
+    }
+
     @Override
-    public ResponseEntity<ResponseDto> createEvent(CompanyOrganizerRequestDto companyOrganizerRequestDto) {
+    public ResponseEntity<ResponseDto> createCompanyOrganizer(CompanyOrganizerRequestDto companyOrganizerRequestDto) {
         companyOrganizerService.create(companyOrganizerRequestDto);
         return ResponseEntity.status(HttpStatus.CREATED).body(new ResponseDto(CompanyOrganizerConstants.STATUS_201, CompanyOrganizerConstants.MESSAGE_201));
     }
+
+    @Override
+    public ResponseEntity<CompanyOrganizerResponseDto> fetchCompanyOrganizer(String email) {
+
+        return ResponseEntity.status(HttpStatus.OK).body(companyOrganizerService.findByEmail(email));
+
+    }
+
+
 }

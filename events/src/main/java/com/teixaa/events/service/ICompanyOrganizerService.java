@@ -8,7 +8,11 @@ import com.teixaa.events.entity.CompanyOrganizer;
 import java.util.UUID;
 
 public interface ICompanyOrganizerService {
+
     CompanyOrganizer findById(UUID id);
 
     void create(CompanyOrganizerRequestDto companyOrganizerRequestDto);
+
+    CompanyOrganizerResponseDto findByEmail(String email);
+
 }

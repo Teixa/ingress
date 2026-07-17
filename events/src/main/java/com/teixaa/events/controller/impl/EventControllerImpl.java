@@ -6,13 +6,17 @@ import com.teixaa.events.controller.IEventController;
 
 import com.teixaa.events.dto.ResponseDto;
 import com.teixaa.events.dto.request.CreateEventRequestDto;
+import com.teixaa.events.dto.response.EventResponseDto;
 import com.teixaa.events.service.IEventService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.UUID;
 
 @RestController
 @Validated
@@ -29,6 +33,11 @@ public class EventControllerImpl implements IEventController {
         eventService.saveEvent(createEventRequestDto);
         return ResponseEntity.status(HttpStatus.CREATED).body(new ResponseDto(EventConstants.STATUS_201, EventConstants.MESSAGE_201));
 
+    }
+
+    public ResponseEntity<EventResponseDto> findEventById(@RequestParam UUID uuid) {
+        EventResponseDto eventResponseDto = eventService.findById(uuid);
+        return ResponseEntity.status(HttpStatus.OK).body(eventResponseDto);
     }
 
 }
