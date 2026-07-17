@@ -1,4 +1,4 @@
-package com.teixaa.events.constants;
+package com.teixaa.events.enums;
 
 public enum EventStatus {
     DRAFT,

@@ -2,7 +2,7 @@ package com.teixaa.events.controller;
 
 
 import com.teixaa.events.dto.ResponseDto;
-import com.teixaa.events.dto.request.CreateEventRequestDto;
+import com.teixaa.events.dto.request.CompanyOrganizerRequestDto;
 import com.teixaa.events.dto.response.ErrorResponseDto;
 import com.teixaa.events.dto.response.EventResponseDto;
 import io.swagger.v3.oas.annotations.Operation;
@@ -47,6 +47,6 @@ public interface ICompanyOrganizerController {
     }
     )
     @PostMapping(path = "createEvent")
-    public ResponseEntity<ResponseDto> createEvent (@Valid @RequestBody CreateEventRequestDto createEventRequestDto);
+    public ResponseEntity<ResponseDto> createEvent (@Valid @RequestBody CompanyOrganizerRequestDto companyOrganizerRequestDto);
 
 }

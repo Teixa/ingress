@@ -1,6 +1,6 @@
 package com.teixaa.events.entity;
 
-import com.teixaa.events.constants.SessionStatus;
+import com.teixaa.events.enums.SessionStatus;
 import jakarta.persistence.*;
 import lombok.experimental.SuperBuilder;
 

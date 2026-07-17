@@ -1,6 +1,6 @@
 package com.teixaa.events.dto.request;
 
-import com.teixaa.events.constants.EventCategory;
+import com.teixaa.events.enums.EventCategory;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

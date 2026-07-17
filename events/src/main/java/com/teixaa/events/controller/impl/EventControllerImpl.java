@@ -1,11 +1,14 @@
 package com.teixaa.events.controller.impl;
 
+import com.teixaa.events.constants.CompanyOrganizerConstants;
+import com.teixaa.events.constants.EventConstants;
 import com.teixaa.events.controller.IEventController;
 
 import com.teixaa.events.dto.ResponseDto;
 import com.teixaa.events.dto.request.CreateEventRequestDto;
 import com.teixaa.events.service.IEventService;
 import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,7 +27,8 @@ public class EventControllerImpl implements IEventController {
     @Override
     public ResponseEntity<ResponseDto> createEvent (@Valid @RequestBody CreateEventRequestDto createEventRequestDto) {
         eventService.saveEvent(createEventRequestDto);
-        return null;
+        return ResponseEntity.status(HttpStatus.CREATED).body(new ResponseDto(EventConstants.STATUS_201, EventConstants.MESSAGE_201));
+
     }
 
 }

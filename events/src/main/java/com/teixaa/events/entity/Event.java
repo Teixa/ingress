@@ -1,7 +1,7 @@
 package com.teixaa.events.entity;
 
-import com.teixaa.events.constants.EventCategory;
-import com.teixaa.events.constants.EventStatus;
+import com.teixaa.events.enums.EventCategory;
+import com.teixaa.events.enums.EventStatus;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;

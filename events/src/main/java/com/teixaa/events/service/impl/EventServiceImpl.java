@@ -1,6 +1,6 @@
 package com.teixaa.events.service.impl;
 
-import com.teixaa.events.constants.EventStatus;
+import com.teixaa.events.enums.EventStatus;
 import com.teixaa.events.dto.request.CreateEventRequestDto;
 import com.teixaa.events.entity.CompanyOrganizer;
 import com.teixaa.events.entity.Event;
