@@ -33,7 +33,7 @@ public interface ICompanyOrganizerController {
             @ApiResponse(
                     responseCode = "201",
                     description = "HTTP Status CREATED",
-                    content = {@Content(mediaType = "application/json",schema = @Schema(implementation = EventResponseDto.class))}
+                    content = {@Content(mediaType = "application/json",schema = @Schema(implementation = CompanyOrganizerResponseDto.class))}
             ),
             @ApiResponse(
                     responseCode = "500",
@@ -45,7 +45,7 @@ public interface ICompanyOrganizerController {
     }
     )
     @PostMapping(path = "createCompanyOrganizer")
-    ResponseEntity<ResponseDto> createCompanyOrganizer(@Valid @RequestBody CompanyOrganizerRequestDto companyOrganizerRequestDto);
+    ResponseEntity<CompanyOrganizerResponseDto> createCompanyOrganizer(@Valid @RequestBody CompanyOrganizerRequestDto companyOrganizerRequestDto);
 
     @Operation(
             summary = "Fetch Company Organizer details REST API",

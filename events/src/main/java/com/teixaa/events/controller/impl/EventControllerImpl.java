@@ -29,14 +29,15 @@ public class EventControllerImpl implements IEventController {
     }
 
     @Override
-    public ResponseEntity<ResponseDto> createEvent (@Valid @RequestBody CreateEventRequestDto createEventRequestDto) {
+    public ResponseEntity<ResponseDto> createEvent(@Valid @RequestBody CreateEventRequestDto createEventRequestDto) {
         eventService.saveEvent(createEventRequestDto);
         return ResponseEntity.status(HttpStatus.CREATED).body(new ResponseDto(EventConstants.STATUS_201, EventConstants.MESSAGE_201));
 
     }
 
-    public ResponseEntity<EventResponseDto> findEventById(@RequestParam UUID uuid) {
-        EventResponseDto eventResponseDto = eventService.findById(uuid);
+    @Override
+    public ResponseEntity<EventResponseDto> findEventById(@RequestParam UUID id) {
+        EventResponseDto eventResponseDto = eventService.findById(id);
         return ResponseEntity.status(HttpStatus.OK).body(eventResponseDto);
     }
 

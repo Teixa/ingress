@@ -27,11 +27,13 @@ public class CompanyOrganizerServiceImpl implements ICompanyOrganizerService {
     }
 
     @Override
-    public void create(CompanyOrganizerRequestDto companyOrganizerRequestDto) {
+    public CompanyOrganizerResponseDto create(CompanyOrganizerRequestDto companyOrganizerRequestDto) {
 
         CompanyOrganizer companyOrganizer = companyOrganizerMapper.toEntity(companyOrganizerRequestDto);
 
-        companyOrganizerRepository.save(companyOrganizer);
+        CompanyOrganizer companyOrganizerSaved = companyOrganizerRepository.save(companyOrganizer);
+
+        return companyOrganizerMapper.toResponse(companyOrganizerSaved);
     }
 
     @Override

@@ -11,7 +11,7 @@ public interface ICompanyOrganizerService {
 
     CompanyOrganizer findById(UUID id);
 
-    void create(CompanyOrganizerRequestDto companyOrganizerRequestDto);
+    CompanyOrganizerResponseDto create(CompanyOrganizerRequestDto companyOrganizerRequestDto);
 
     CompanyOrganizerResponseDto findByEmail(String email);
 

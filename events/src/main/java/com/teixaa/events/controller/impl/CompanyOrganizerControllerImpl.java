@@ -23,9 +23,9 @@ public class CompanyOrganizerControllerImpl implements ICompanyOrganizerControll
     }
 
     @Override
-    public ResponseEntity<ResponseDto> createCompanyOrganizer(CompanyOrganizerRequestDto companyOrganizerRequestDto) {
-        companyOrganizerService.create(companyOrganizerRequestDto);
-        return ResponseEntity.status(HttpStatus.CREATED).body(new ResponseDto(CompanyOrganizerConstants.STATUS_201, CompanyOrganizerConstants.MESSAGE_201));
+    public ResponseEntity<CompanyOrganizerResponseDto> createCompanyOrganizer(CompanyOrganizerRequestDto companyOrganizerRequestDto) {
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(companyOrganizerService.create(companyOrganizerRequestDto));
     }
 
     @Override

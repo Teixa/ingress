@@ -4,23 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8edd0f62-611e-4fac-a32d-bb2e982acd5c" name="Changes" comment="Ajusta retorno create com constants">
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/dto/request/CreateSessionRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/exception/CustomerAlreadyExistsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/exception/ResourceNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/mapper/SessionMapper.java" afterDir="false" />
+    <list default="true" id="8edd0f62-611e-4fac-a32d-bb2e982acd5c" name="Changes" comment="adiciona excessões e busca de organizador">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/ICompanyOrganizerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/ICompanyOrganizerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/IEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/IEventController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/impl/CompanyOrganizerControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/impl/CompanyOrganizerControllerImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/impl/EventControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/impl/EventControllerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/dto/response/EventResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/dto/response/EventResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/mapper/EventMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/mapper/EventMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/repository/CompanyOrganizerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/repository/CompanyOrganizerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/dto/response/CompanyOrganizerResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/dto/response/CompanyOrganizerResponseDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/ICompanyOrganizerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/ICompanyOrganizerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/IEventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/IEventService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/impl/CompanyOrganizerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/impl/CompanyOrganizerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/impl/EventServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/impl/EventServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +189,15 @@
       <option name="project" value="LOCAL" />
       <updated>1784257592792</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="adiciona excessões e busca de organizador">
+      <option name="closed" value="true" />
+      <created>1784301629600</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1784301629600</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -208,7 +208,8 @@
     <MESSAGE value="inicia funcionalidade de salvar organizadores" />
     <MESSAGE value="adiciona mapper interface de CompanyOrganizer com ajustes no pom" />
     <MESSAGE value="Ajusta retorno create com constants" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajusta retorno create com constants" />
+    <MESSAGE value="adiciona excessões e busca de organizador" />
+    <option name="LAST_COMMIT_MESSAGE" value="adiciona excessões e busca de organizador" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

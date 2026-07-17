@@ -13,10 +13,9 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.UUID;
 
 @Tag(
         name = "CRUD REST APIs for Events in Ingress",
@@ -49,4 +48,27 @@ public interface IEventController {
     )
     @PostMapping(path = "createEvent")
     public ResponseEntity<ResponseDto> createEvent (@Valid @RequestBody CreateEventRequestDto createEventRequestDto);
+
+
+    @Operation(
+            summary = "Fetch Event REST API",
+            description = "REST API to find an Event passing UUID"
+    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "201",
+                    description = "HTTP Status CREATED",
+                    content = {@Content(mediaType = "application/json",schema = @Schema(implementation = EventResponseDto.class))}
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "HTTP Status Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
+            )
+    }
+    )
+    @GetMapping(path = "fetchEvent")
+    public ResponseEntity<EventResponseDto> findEventById(@RequestParam UUID id);
 }
