@@ -4,19 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8edd0f62-611e-4fac-a32d-bb2e982acd5c" name="Changes" comment="ajusta retorno de company organizer e buscar eventos">
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/dto/response/SessionResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/repository/SessionRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/ISessionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/impl/SessionServiceImpl.java" afterDir="false" />
+    <list default="true" id="8edd0f62-611e-4fac-a32d-bb2e982acd5c" name="Changes" comment="ajusta retorno criar evento">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/IEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/IEventController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/ISessionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/ISessionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/impl/EventControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/impl/EventControllerImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/impl/SessionControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/impl/SessionControllerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/dto/request/CreateSessionRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/dto/request/CreateSessionRequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/entity/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/entity/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/mapper/SessionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/mapper/SessionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/mapper/EventMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/mapper/EventMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/ICompanyOrganizerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/ICompanyOrganizerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/IEventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/IEventService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/impl/CompanyOrganizerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/impl/CompanyOrganizerServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/impl/EventServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/impl/EventServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -210,7 +207,23 @@
       <option name="project" value="LOCAL" />
       <updated>1784302304209</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="criar sessao">
+      <option name="closed" value="true" />
+      <created>1784335754699</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1784335754699</updated>
+    </task>
+    <task id="LOCAL-00011" summary="ajusta retorno criar evento">
+      <option name="closed" value="true" />
+      <created>1784336004154</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1784336004154</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -223,7 +236,9 @@
     <MESSAGE value="Ajusta retorno create com constants" />
     <MESSAGE value="adiciona excessões e busca de organizador" />
     <MESSAGE value="ajusta retorno de company organizer e buscar eventos" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajusta retorno de company organizer e buscar eventos" />
+    <MESSAGE value="criar sessao" />
+    <MESSAGE value="ajusta retorno criar evento" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajusta retorno criar evento" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -232,11 +247,6 @@
           <url>file://$PROJECT_DIR$/customer/src/main/java/com/teixaa/customer/service/impl/CustomerServiceImpl.java</url>
           <line>41</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/ISessionController.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

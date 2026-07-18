@@ -1,6 +1,7 @@
 package com.teixaa.events.controller;
 
 import com.teixaa.events.dto.request.CreateEventRequestDto;
+import com.teixaa.events.dto.request.UpdateEventRequestDto;
 import com.teixaa.events.dto.response.ErrorResponseDto;
 import com.teixaa.events.dto.ResponseDto;
 import com.teixaa.events.dto.response.EventResponseDto;
@@ -71,4 +72,31 @@ public interface IEventController {
     )
     @GetMapping(path = "fetchEvent")
     public ResponseEntity<EventResponseDto> findEventById(@RequestParam UUID id);
+
+    @Operation(
+            summary = "Update Event Details REST API",
+            description = "REST API to update Event details based on a uuid"
+    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "HTTP Status OK"
+            ),
+            @ApiResponse(
+                    responseCode = "417",
+                    description = "Expectation Failed"
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "HTTP Status Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
+            )
+    }
+    )
+    @PutMapping("/updateEvent/{eventId}")
+    public EventResponseDto update(
+            @PathVariable UUID eventId,
+            @Valid @RequestBody UpdateEventRequestDto request);
 }

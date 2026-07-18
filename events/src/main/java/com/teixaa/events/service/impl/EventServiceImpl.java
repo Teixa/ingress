@@ -1,5 +1,6 @@
 package com.teixaa.events.service.impl;
 
+import com.teixaa.events.dto.request.UpdateEventRequestDto;
 import com.teixaa.events.dto.response.EventResponseDto;
 import com.teixaa.events.enums.EventStatus;
 import com.teixaa.events.dto.request.CreateEventRequestDto;
@@ -32,7 +33,7 @@ public class EventServiceImpl implements IEventService {
     public EventResponseDto saveEvent(CreateEventRequestDto createEventRequestDto) {
 
 
-        CompanyOrganizer organizer = companyOrganizerService.findById(createEventRequestDto.getCompanyOrganizerId());
+        CompanyOrganizer organizer = companyOrganizerService.findEntityById(createEventRequestDto.getCompanyOrganizerId());
 
         Event event = Event.builder().
                 name(createEventRequestDto.getName())
@@ -69,6 +70,21 @@ public class EventServiceImpl implements IEventService {
 
         return eventMapper.toResponse(findEntityById(id));
     }
+
+    public EventResponseDto update(UUID eventId,
+                                   UpdateEventRequestDto request) {
+
+
+        Event event = findEntityById(eventId);
+
+        eventMapper.updateEntity(request, event);
+
+        event.setCompanyOrganizer(
+                companyOrganizerService.findEntityById(request.getCompanyOrganizerId()));
+
+        return eventMapper.toResponse(eventRepository.save(event));
+    }
+
 }
 
 //INSERT INTO company_organizers (

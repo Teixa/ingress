@@ -20,10 +20,16 @@ public class CompanyOrganizerServiceImpl implements ICompanyOrganizerService {
     private final CompanyOrganizerMapper companyOrganizerMapper;
 
     @Override
-    public CompanyOrganizer findById(UUID id) {
+    public CompanyOrganizer findEntityById(UUID id) {
         return companyOrganizerRepository.findById(id)
                 .orElseThrow(() ->
                         new CompanyOrganizerNotFoundException("Company organizer", "uuid", id));
+    }
+
+    @Override
+    public CompanyOrganizerResponseDto findById(UUID id) {
+
+        return companyOrganizerMapper.toResponse(findEntityById(id));
     }
 
     @Override

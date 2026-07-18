@@ -6,8 +6,6 @@ import com.teixaa.events.dto.response.SessionResponseDto;
 import com.teixaa.events.service.ISessionService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
