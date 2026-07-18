@@ -51,13 +51,22 @@ public class EventServiceImpl implements IEventService {
 
     @Override
     @Transactional(readOnly = true)
-    public EventResponseDto findById(UUID id) {
+    public Event findEntityById(UUID id) {
 
         Event event = eventRepository.findById(id)
                 .orElseThrow(() ->
                         new CompanyOrganizerNotFoundException("Company organizer", "uuid", id));
 
-        return eventMapper.toResponse(event);
+        return event;
+    }
+
+    //TODO adicionar findbyemail
+
+    @Transactional(readOnly = true)
+    @Override
+    public EventResponseDto findById(UUID id) {
+
+        return eventMapper.toResponse(findEntityById(id));
     }
 }
 

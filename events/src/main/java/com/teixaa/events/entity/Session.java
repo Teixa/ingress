@@ -2,6 +2,10 @@ package com.teixaa.events.entity;
 
 import com.teixaa.events.enums.SessionStatus;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
 import java.time.Duration;
@@ -10,6 +14,10 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "sessions")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @SuperBuilder
 public class Session extends BaseEntity {
 

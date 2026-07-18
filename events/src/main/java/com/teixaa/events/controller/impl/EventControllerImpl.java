@@ -1,6 +1,5 @@
 package com.teixaa.events.controller.impl;
 
-import com.teixaa.events.constants.CompanyOrganizerConstants;
 import com.teixaa.events.constants.EventConstants;
 import com.teixaa.events.controller.IEventController;
 
