@@ -9,7 +9,7 @@ import java.util.UUID;
 
 public interface IEventService {
 
-    void saveEvent(CreateEventRequestDto createEventRequestDto);
+    EventResponseDto saveEvent(CreateEventRequestDto createEventRequestDto);
 
     Event findEntityById(UUID id);
 

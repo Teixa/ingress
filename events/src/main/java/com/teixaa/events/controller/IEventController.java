@@ -47,7 +47,7 @@ public interface IEventController {
     }
     )
     @PostMapping(path = "createEvent")
-    public ResponseEntity<ResponseDto> createEvent (@Valid @RequestBody CreateEventRequestDto createEventRequestDto);
+    public ResponseEntity<EventResponseDto> createEvent (@Valid @RequestBody CreateEventRequestDto createEventRequestDto);
 
 
     @Operation(

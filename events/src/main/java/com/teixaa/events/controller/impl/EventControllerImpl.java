@@ -28,9 +28,9 @@ public class EventControllerImpl implements IEventController {
     }
 
     @Override
-    public ResponseEntity<ResponseDto> createEvent(@Valid @RequestBody CreateEventRequestDto createEventRequestDto) {
-        eventService.saveEvent(createEventRequestDto);
-        return ResponseEntity.status(HttpStatus.CREATED).body(new ResponseDto(EventConstants.STATUS_201, EventConstants.MESSAGE_201));
+    public ResponseEntity<EventResponseDto> createEvent(@Valid @RequestBody CreateEventRequestDto createEventRequestDto) {
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(eventService.saveEvent(createEventRequestDto));
 
     }
 

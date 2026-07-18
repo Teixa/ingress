@@ -29,7 +29,7 @@ public class EventServiceImpl implements IEventService {
     private EventMapper eventMapper;
 
     @Override
-    public void saveEvent(CreateEventRequestDto createEventRequestDto) {
+    public EventResponseDto saveEvent(CreateEventRequestDto createEventRequestDto) {
 
 
         CompanyOrganizer organizer = companyOrganizerService.findById(createEventRequestDto.getCompanyOrganizerId());
@@ -46,7 +46,8 @@ public class EventServiceImpl implements IEventService {
                 .status(EventStatus.DRAFT)
                 .build();
 
-        eventRepository.save(event);
+        Event eventSaved = eventRepository.save(event);
+        return eventMapper.toResponse(eventSaved);
     }
 
     @Override
