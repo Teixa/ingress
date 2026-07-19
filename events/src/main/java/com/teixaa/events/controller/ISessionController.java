@@ -22,7 +22,7 @@ import java.util.UUID;
         description = "CRUD REST APIs in Ingress to CREATE, UPDATE, FETCH AND DELETE Events details"
 )
 @RestController()
-@RequestMapping(path = "/api", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(path = "/api/session", produces = MediaType.APPLICATION_JSON_VALUE)
 public interface ISessionController {
 
     @Operation(
@@ -44,9 +44,32 @@ public interface ISessionController {
             )
     }
     )
-    @PostMapping("/{eventId}/sessions")
+    @PostMapping("/createSession/{eventId}/sessions")
     @ResponseStatus(HttpStatus.CREATED)
     SessionResponseDto create(
             @PathVariable UUID eventId,
             @Valid @RequestBody CreateSessionRequestDto request);
+
+    @Operation(
+            summary = "Find Session REST API",
+            description = "REST API to fetch details about a Session"
+    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "201",
+                    description = "HTTP Status CREATED",
+                    content = {@Content(mediaType = "application/json",schema = @Schema(implementation = SessionResponseDto.class))}
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "HTTP Status Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
+            )
+    }
+    )
+    @GetMapping("/fetchSessionDetails/{eventId}/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    SessionResponseDto fetchSessionDetails(@PathVariable UUID eventId, @PathVariable UUID id);
 }

@@ -26,4 +26,10 @@ public class SessionControllerImpl implements ISessionController {
         return sessionService.create(eventId, request);
     }
 
+    @Override
+    public SessionResponseDto fetchSessionDetails(@PathVariable UUID eventId, @PathVariable UUID id) {
+
+        return sessionService.findByEventIdAndId(eventId, id);
+    }
+
 }

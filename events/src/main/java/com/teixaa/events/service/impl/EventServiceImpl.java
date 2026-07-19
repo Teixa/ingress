@@ -71,6 +71,7 @@ public class EventServiceImpl implements IEventService {
         return eventMapper.toResponse(findEntityById(id));
     }
 
+    @Override
     public EventResponseDto update(UUID eventId,
                                    UpdateEventRequestDto request) {
 
