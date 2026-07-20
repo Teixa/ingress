@@ -4,14 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8edd0f62-611e-4fac-a32d-bb2e982acd5c" name="Changes" comment="adiciona update">
+    <list default="true" id="e300e1cd-a8f0-47fb-bce0-7a2d77e6387d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/venue/src/main/java/com/teixaa/venue/entity/BaseEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venue/src/main/java/com/teixaa/venue/entity/Seat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venue/src/main/java/com/teixaa/venue/entity/Sector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venue/src/main/java/com/teixaa/venue/entity/Venue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venue/src/main/java/com/teixaa/venue/enums/SeatType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venue/src/main/java/com/teixaa/venue/enums/SectorType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/ISessionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/ISessionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/impl/SessionControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/impl/SessionControllerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/repository/SessionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/repository/SessionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/ISessionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/ISessionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/impl/EventServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/impl/EventServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/impl/SessionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/impl/SessionServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,28 +25,26 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
-        <option value="Exception" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;Teixa&quot;
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Teixa"
   }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Teixa/ingress.git&quot;,
-    &quot;accountId&quot;: &quot;3f69764b-c4d5-4215-bfbe-2239d3780c8a&quot;
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Teixa/ingress.git",
+    "accountId": "3f69764b-c4d5-4215-bfbe-2239d3780c8a"
   }
-}</component>
+}]]></component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -50,72 +52,29 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 6
-}</component>
-  <component name="ProjectId" id="3GVqaciaJtLgV6SWo49JkG1S4OA" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="3GjPuXt41CU81uSGfpGK340Yqf3" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.CustomerApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;Spring Boot.EventsApplication.executor&quot;: &quot;Debug&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.VenueApplication.executor": "Debug",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.teixaa.events.exception" />
-      <recent name="com.teixaa.events.dto" />
-      <recent name="com.teixaa.events.entity" />
+      <recent name="com.teixaa.venue.entity" />
     </key>
-  </component>
-  <component name="RunManager" selected="Spring Boot.EventsApplication">
-    <configuration name="CustomerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
-      <module name="customer" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.teixaa.customer.CustomerApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.teixaa.customer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EventsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
-      <module name="events" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.teixaa.events.EventsApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.teixaa.events.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Spring Boot.EventsApplication" />
-        <item itemvalue="Spring Boot.CustomerApplication" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -126,135 +85,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8edd0f62-611e-4fac-a32d-bb2e982acd5c" name="Changes" comment="" />
-      <created>1784067148771</created>
+      <changelist id="e300e1cd-a8f0-47fb-bce0-7a2d77e6387d" name="Changes" comment="" />
+      <created>1784482230256</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1784067148771</updated>
+      <updated>1784482230256</updated>
     </task>
-    <task id="LOCAL-00001" summary="adiciona updateCustomer">
-      <option name="closed" value="true" />
-      <created>1784079036229</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1784079036229</updated>
-    </task>
-    <task id="LOCAL-00002" summary="ajusta updateCustomer">
-      <option name="closed" value="true" />
-      <created>1784079501984</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1784079501984</updated>
-    </task>
-    <task id="LOCAL-00003" summary="adiciona ms Events">
-      <option name="closed" value="true" />
-      <created>1784079534941</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1784079534941</updated>
-    </task>
-    <task id="LOCAL-00004" summary="cria funcionalidade de salvar eventos">
-      <option name="closed" value="true" />
-      <created>1784162392899</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1784162392899</updated>
-    </task>
-    <task id="LOCAL-00005" summary="inicia funcionalidade de salvar organizadores">
-      <option name="closed" value="true" />
-      <created>1784163240265</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1784163240265</updated>
-    </task>
-    <task id="LOCAL-00006" summary="adiciona mapper interface de CompanyOrganizer com ajustes no pom">
-      <option name="closed" value="true" />
-      <created>1784216625830</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1784216625831</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Ajusta retorno create com constants">
-      <option name="closed" value="true" />
-      <created>1784257592792</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1784257592792</updated>
-    </task>
-    <task id="LOCAL-00008" summary="adiciona excessões e busca de organizador">
-      <option name="closed" value="true" />
-      <created>1784301629600</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1784301629600</updated>
-    </task>
-    <task id="LOCAL-00009" summary="ajusta retorno de company organizer e buscar eventos">
-      <option name="closed" value="true" />
-      <created>1784302304209</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1784302304209</updated>
-    </task>
-    <task id="LOCAL-00010" summary="criar sessao">
-      <option name="closed" value="true" />
-      <created>1784335754699</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1784335754699</updated>
-    </task>
-    <task id="LOCAL-00011" summary="ajusta retorno criar evento">
-      <option name="closed" value="true" />
-      <created>1784336004154</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1784336004154</updated>
-    </task>
-    <task id="LOCAL-00012" summary="adiciona update">
-      <option name="closed" value="true" />
-      <created>1784341025632</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1784341025632</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
     <servers />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="adiciona updateCustomer" />
-    <MESSAGE value="ajusta updateCustomer" />
-    <MESSAGE value="adiciona ms Events" />
-    <MESSAGE value="cria funcionalidade de salvar eventos" />
-    <MESSAGE value="inicia funcionalidade de salvar organizadores" />
-    <MESSAGE value="adiciona mapper interface de CompanyOrganizer com ajustes no pom" />
-    <MESSAGE value="Ajusta retorno create com constants" />
-    <MESSAGE value="adiciona excessões e busca de organizador" />
-    <MESSAGE value="ajusta retorno de company organizer e buscar eventos" />
-    <MESSAGE value="criar sessao" />
-    <MESSAGE value="ajusta retorno criar evento" />
-    <MESSAGE value="adiciona update" />
-    <option name="LAST_COMMIT_MESSAGE" value="adiciona update" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/customer/src/main/java/com/teixaa/customer/service/impl/CustomerServiceImpl.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
