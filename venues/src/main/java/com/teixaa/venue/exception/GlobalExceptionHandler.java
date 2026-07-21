@@ -1,7 +1,7 @@
-package com.teixaa.events.exception;
+package com.teixaa.venue.exception;
 
 
-import com.teixaa.events.dto.response.ErrorResponseDto;
+import com.teixaa.venue.dto.response.ErrorResponseDto;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
@@ -58,5 +58,20 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         );
         return new ResponseEntity<>(errorResponseDTO, HttpStatus.NOT_FOUND);
     }
+
+    @ExceptionHandler(SectorAlreadyExists.class)
+    public ResponseEntity<ErrorResponseDto> SectorAlreadyExists(ResourceNotFoundException exception,
+                                                                            WebRequest webRequest) {
+        ErrorResponseDto errorResponseDTO = new ErrorResponseDto(
+                webRequest.getDescription(false),
+                HttpStatus.NOT_FOUND,
+                exception.getMessage(),
+                LocalDateTime.now()
+        );
+        return new ResponseEntity<>(errorResponseDTO, HttpStatus.NOT_FOUND);
+    }
+
+
+
 
 }

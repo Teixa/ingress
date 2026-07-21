@@ -1,16 +1,17 @@
 package com.teixaa.venue.entity;
 
+import com.teixaa.venue.enums.SectorCategory;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
-import org.springframework.data.annotation.Id;
+
 
 import java.util.UUID;
 
-@Entity
+
 @Table(
         name = "seats",
         uniqueConstraints = {
@@ -28,6 +29,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
+@Entity
 public class Seat extends BaseEntity {
 
     @Id
@@ -46,7 +48,7 @@ public class Seat extends BaseEntity {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private SeatType seatType;
+    private SectorCategory sectorCategory;
 
     @Column(nullable = false)
     private Boolean active;

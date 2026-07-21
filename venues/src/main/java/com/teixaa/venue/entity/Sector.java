@@ -1,11 +1,11 @@
 package com.teixaa.venue.entity;
 
+import com.teixaa.venue.enums.OccupancyType;
+import com.teixaa.venue.enums.SectorCategory;
 import jakarta.persistence.*;
         import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -31,16 +31,12 @@ public class Sector extends BaseEntity {
     @Column(nullable = false)
     private Integer capacity;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private Boolean numberedSeats;
+    private SectorCategory category;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private SectorType sectorType;
+    private OccupancyType occupancyType;
 
-    @OneToMany(
-            mappedBy = "sector",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true)
-    private List<Seat> seats = new ArrayList<>();
 }

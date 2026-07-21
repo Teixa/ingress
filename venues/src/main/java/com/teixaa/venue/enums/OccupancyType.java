@@ -1,6 +1,6 @@
 package com.teixaa.venue.enums;
 
-public enum SectorType {
+public enum OccupancyType {
 
     GENERAL_ADMISSION,
 
