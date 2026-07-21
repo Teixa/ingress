@@ -41,14 +41,10 @@ public class Seat extends BaseEntity {
     private Sector sector;
 
     @Column(name = "seat_row", nullable = false, length = 10)
-    private String row;
+    private String seatRow;
 
     @Column(name = "seat_number", nullable = false, length = 10)
-    private String number;
-
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
-    private SectorCategory sectorCategory;
+    private String seatNumber;
 
     @Column(nullable = false)
     private Boolean active;

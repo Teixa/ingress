@@ -60,8 +60,20 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler(SectorAlreadyExists.class)
-    public ResponseEntity<ErrorResponseDto> SectorAlreadyExists(ResourceNotFoundException exception,
+    public ResponseEntity<ErrorResponseDto> sectorAlreadyExists(ResourceNotFoundException exception,
                                                                             WebRequest webRequest) {
+        ErrorResponseDto errorResponseDTO = new ErrorResponseDto(
+                webRequest.getDescription(false),
+                HttpStatus.NOT_FOUND,
+                exception.getMessage(),
+                LocalDateTime.now()
+        );
+        return new ResponseEntity<>(errorResponseDTO, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(SeatException.class)
+    public ResponseEntity<ErrorResponseDto> seatException(SeatException exception,
+                                                                WebRequest webRequest) {
         ErrorResponseDto errorResponseDTO = new ErrorResponseDto(
                 webRequest.getDescription(false),
                 HttpStatus.NOT_FOUND,
