@@ -4,14 +4,56 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e300e1cd-a8f0-47fb-bce0-7a2d77e6387d" name="Changes" comment="adiciona funcionalidades setor e ms eureka">
+    <list default="true" id="e300e1cd-a8f0-47fb-bce0-7a2d77e6387d" name="Changes" comment="adiciona configuracoes do eureka para os ms">
+      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/dto/feign/venues/VenueResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/client/VenuesFeignClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/customer/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/events/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/events/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venues/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/venues/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/EventsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/EventsApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/impl/EventServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/impl/EventServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/VenueApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/VenuesApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/audit/AuditorAwareImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/audit/AuditorAwareImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/controller/ISeatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/controller/ISeatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/controller/ISectorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/controller/ISectorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/controller/IVenueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/controller/IVenueController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/controller/impl/SeatControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/controller/impl/SeatControllerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/controller/impl/SectorControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/controller/impl/SectorControllerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/controller/impl/VenueControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/controller/impl/VenueControllerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/dto/request/CreateSeatRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/dto/request/CreateSeatRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/dto/request/CreateSectorRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/dto/request/CreateSectorRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/dto/request/CreateVenueRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/dto/request/CreateVenueRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/dto/request/UpdateSeatRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/dto/request/UpdateSeatRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/dto/request/UpdateSectorRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/dto/request/UpdateSectorRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/dto/request/UpdateVenueRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/dto/request/UpdateVenueRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/dto/response/ErrorResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/dto/response/ErrorResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/dto/response/SeatResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/dto/response/SeatResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/dto/response/SectorResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/dto/response/SectorResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/dto/response/VenueResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/dto/response/VenueResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/entity/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/entity/BaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/entity/Seat.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/entity/Seat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/entity/Sector.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/entity/Sector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/entity/Venue.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/entity/Venue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/enums/OccupancyType.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/enums/OccupancyType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/enums/SectorCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/enums/SectorCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/exception/ResourceNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/exception/ResourceNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/exception/SeatException.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/exception/SeatException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/exception/SectorAlreadyExists.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/exception/SectorAlreadyExists.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/mapper/SeatMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/mapper/SeatMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/mapper/SectorMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/mapper/SectorMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/mapper/VenueMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/mapper/VenueMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/repository/SeatRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/repository/SeatRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/repository/SectorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/repository/SectorRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/repository/VenueRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/repository/VenueRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/service/ISeatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/service/ISeatService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/service/ISectorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/service/ISectorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/service/IVenueService.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/service/IVenueService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/service/impl/SeatServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/service/impl/SeatServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/service/impl/SectorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/service/impl/SectorServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venue/service/impl/VenueServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/service/impl/VenueServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venues/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/test/java/com/teixaa/venue/VenueApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/test/java/com/teixaa/venues/VenuesApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,9 +64,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
-        <option value="Interface" />
         <option value="Exception" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -73,6 +115,7 @@
     "Spring Boot.EurekaserverApplication.executor": "Debug",
     "Spring Boot.EventsApplication.executor": "Debug",
     "Spring Boot.VenueApplication.executor": "Debug",
+    "Spring Boot.VenuesApplication.executor": "Debug",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true"
   }
@@ -85,7 +128,7 @@
       <recent name="com.teixaa.venue.entity" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.VenueApplication">
+  <component name="RunManager" selected="Spring Boot.VenuesApplication">
     <configuration name="CustomerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
       <module name="customer" />
@@ -128,13 +171,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VenueApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="VenuesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
       <module name="venues" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.teixaa.venue.VenueApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.teixaa.venues.VenuesApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.teixaa.venue.*" />
+          <option name="PATTERN" value="com.teixaa.venues.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -144,10 +187,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.VenueApplication" />
+        <item itemvalue="Spring Boot.VenuesApplication" />
         <item itemvalue="Spring Boot.EventsApplication" />
-        <item itemvalue="Spring Boot.CustomerApplication" />
         <item itemvalue="Spring Boot.EurekaserverApplication" />
+        <item itemvalue="Spring Boot.CustomerApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -190,13 +233,38 @@
       <option name="project" value="LOCAL" />
       <updated>1784654281007</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="adiciona configuracoes do eureka para os ms">
+      <option name="closed" value="true" />
+      <created>1784661775966</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1784661775966</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="define entidades e enums" />
     <MESSAGE value="controladores, service e respositorios de Lugar e setor" />
     <MESSAGE value="adiciona funcionalidades setor e ms eureka" />
-    <option name="LAST_COMMIT_MESSAGE" value="adiciona funcionalidades setor e ms eureka" />
+    <MESSAGE value="adiciona configuracoes do eureka para os ms" />
+    <option name="LAST_COMMIT_MESSAGE" value="adiciona configuracoes do eureka para os ms" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/impl/EventServiceImpl.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/impl/EventServiceImpl.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -12,6 +12,7 @@ import com.teixaa.events.repository.EventRepository;
 import com.teixaa.events.service.ICompanyOrganizerService;
 import com.teixaa.events.service.IEventService;
 
+import com.teixaa.events.service.client.VenuesFeignClient;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,30 +23,32 @@ import java.util.UUID;
 @AllArgsConstructor
 public class EventServiceImpl implements IEventService {
 
-
     private ICompanyOrganizerService companyOrganizerService;
-
     private EventRepository eventRepository;
-
     private EventMapper eventMapper;
+    private VenuesFeignClient venuesFeignClient;
 
     @Override
     public EventResponseDto saveEvent(CreateEventRequestDto createEventRequestDto) {
 
-
         CompanyOrganizer organizer = companyOrganizerService.findEntityById(createEventRequestDto.getCompanyOrganizerId());
 
-        Event event = Event.builder().
-                name(createEventRequestDto.getName())
-                .description(createEventRequestDto.getDescription())
-                .imageUrl(createEventRequestDto.getImageUrl())
-                .bannerUrl(createEventRequestDto.getBannerUrl())
-                .minimumAge(createEventRequestDto.getMinimumAge())
-                .eventCategory(createEventRequestDto.getEventCategory())
-                .companyOrganizer(organizer)
-                .venueId(createEventRequestDto.getVenueId())
-                .status(EventStatus.DRAFT)
-                .build();
+        venuesFeignClient.findById(createEventRequestDto.getVenueId());
+
+        Event event = eventMapper.toEntity(createEventRequestDto);
+//        Event event = Event.builder().
+//                name(createEventRequestDto.getName())
+//                .description(createEventRequestDto.getDescription())
+//                .imageUrl(createEventRequestDto.getImageUrl())
+//                .bannerUrl(createEventRequestDto.getBannerUrl())
+//                .minimumAge(createEventRequestDto.getMinimumAge())
+//                .eventCategory(createEventRequestDto.getEventCategory())
+//                .companyOrganizer(organizer)
+//                .venueId(createEventRequestDto.getVenueId())
+//                .status(EventStatus.DRAFT)
+//                .build();
+        event.setStatus(EventStatus.DRAFT);
+        event.setCompanyOrganizer(organizer);
 
         Event eventSaved = eventRepository.save(event);
         return eventMapper.toResponse(eventSaved);
