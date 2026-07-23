@@ -1,0 +1,65 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: reservation
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+
+kafka:
+  bootstrap-servers: localhost:9092
+  topics:
+    reservation-created: reservation.created
+    reservation-confirmed: reservation.confirmed
+    reservation-expired: reservation.expired
+
+reservation:
+  ttl-minutes: 15
+  expiration:
+    check-interval-ms: 600000 # 10 minutes
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 10000
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      access: unrestricted
+  info:
+    env:
+      enabled: true
+
+info:
+  app:
+    name: "reservation"
+    description: "Reservation microservice for Ingress ticketing system"
+    version: "1.0.0"
+
