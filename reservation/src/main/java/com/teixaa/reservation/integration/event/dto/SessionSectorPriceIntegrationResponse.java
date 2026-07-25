@@ -2,17 +2,20 @@ package com.teixaa.reservation.integration.event.dto;
 
 import lombok.*;
 
-import java.util.List;
+import java.math.BigDecimal;
 import java.util.UUID;
 
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class SessionPriceResponse {
+public class SessionSectorPriceIntegrationResponse {
 
     private UUID sessionId;
 
-    private List<SectorPriceResponse> prices;
+    private UUID sectorId;
+
+    private BigDecimal unitPrice;
+
 }

@@ -10,7 +10,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ReservationItemResponse {
+public class ReservationItemResponseDto {
 
     private UUID id;
 
@@ -21,4 +21,6 @@ public class ReservationItemResponse {
     private Integer quantity;
 
     private BigDecimal unitPrice;
+
+    private BigDecimal subtotal;
 }

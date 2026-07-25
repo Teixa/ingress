@@ -69,4 +69,12 @@ public class ReservationItem extends BaseEntity {
      */
     @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal unitPrice = BigDecimal.ZERO;
+
+    public BigDecimal getSubtotal() {
+
+        return unitPrice.multiply(
+                BigDecimal.valueOf(quantity)
+        );
+
+    }
 }

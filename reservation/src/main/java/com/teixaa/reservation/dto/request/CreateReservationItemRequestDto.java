@@ -11,7 +11,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class CreateReservationItemRequest {
+public class CreateReservationItemRequestDto {
 
     @NotNull
     private UUID sectorId;

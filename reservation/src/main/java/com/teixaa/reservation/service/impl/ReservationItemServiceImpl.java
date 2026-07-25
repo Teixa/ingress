@@ -16,6 +16,8 @@ import java.util.UUID;
 @Slf4j
 public class ReservationItemServiceImpl implements IReservationItemService {
 
+    //old
+
     private final ReservationItemRepository reservationItemRepository;
 
     @Override

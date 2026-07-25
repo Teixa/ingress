@@ -1,23 +1,33 @@
 package com.teixaa.reservation.mapper;
 
-import com.teixaa.reservation.dto.response.ReservationItemResponse;
-import com.teixaa.reservation.dto.response.ReservationResponse;
+import com.teixaa.reservation.dto.request.CreateReservationRequestDto;
+import com.teixaa.reservation.dto.response.ReservationItemResponseDto;
+import com.teixaa.reservation.dto.response.ReservationResponseDto;
 import com.teixaa.reservation.entity.Reservation;
 import com.teixaa.reservation.entity.ReservationItem;
-import com.teixaa.reservation.enums.ReservationStatus;
+import org.mapstruct.AfterMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface ReservationMapper {
 
-    ReservationResponse toResponse(Reservation reservation);
+    Reservation toEntity(CreateReservationRequestDto dto);
 
-    ReservationItemResponse toResponse(ReservationItem item);
+    ReservationResponseDto toResponse(Reservation reservation);
 
-    List<ReservationItemResponse> toResponse(List<ReservationItem> items);
+    @Mapping(target = "subtotal", expression = "java(item.getSubtotal())")
+    ReservationItemResponseDto toResponse(
+            ReservationItem item);
+
+    List<ReservationItemResponseDto> toResponse(
+            List<ReservationItem> items);
+
+
+
 }
-
 

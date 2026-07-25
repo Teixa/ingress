@@ -1,13 +1,17 @@
 package com.teixaa.reservation.integration.event.client;
 
-import com.teixaa.reservation.integration.event.dto.SessionPriceResponse;
-import com.teixaa.reservation.integration.event.dto.SessionResponse;
+import com.teixaa.reservation.integration.event.dto.*;
 
 import java.util.UUID;
 
 public interface EventClient {
 
-    SessionResponse getSession(UUID sessionId);
+    SessionIntegrationResponse getSession(UUID sessionId);
 
-    SessionPriceResponse getPrices(UUID sessionId);
+    SessionPriceIntegrationResponse getPrices(UUID sessionId);
+
+    SessionSectorPriceIntegrationResponse getSectorPrice(
+            UUID sessionId,
+            UUID sectorId);
+
 }

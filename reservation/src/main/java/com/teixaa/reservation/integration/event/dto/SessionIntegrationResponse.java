@@ -1,5 +1,6 @@
 package com.teixaa.reservation.integration.event.dto;
 
+import com.teixaa.reservation.feign.enums.SessionStatus;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -7,18 +8,18 @@ import java.util.UUID;
 
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class SessionResponse {
+public class SessionIntegrationResponse {
 
-    private UUID id;
+    private UUID sessionId;
 
     private UUID eventId;
-
-    private LocalDateTime dateTime;
 
     private LocalDateTime salesStart;
 
     private LocalDateTime salesEnd;
+
+    private SessionStatus status;
 }

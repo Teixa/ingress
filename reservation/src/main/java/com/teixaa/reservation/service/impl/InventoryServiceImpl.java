@@ -15,6 +15,8 @@ import java.util.UUID;
 @Slf4j
 public class InventoryServiceImpl implements IInventoryService {
 
+    // old
+
     @Override
     public boolean reserveInventory(UUID sessionId, UUID seatId, Integer quantity) {
         log.debug("Reserving inventory - sessionId: {}, seatId: {}, quantity: {}", sessionId, seatId, quantity);

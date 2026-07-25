@@ -7,10 +7,8 @@ import java.util.UUID;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 @Builder
-public class SectorPriceResponse {
+public class SectorPriceIntegrationResponse {
 
     private UUID sectorId;
 

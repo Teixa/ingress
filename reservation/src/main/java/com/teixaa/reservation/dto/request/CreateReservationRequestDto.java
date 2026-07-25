@@ -4,6 +4,7 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @Getter
@@ -11,7 +12,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class CreateReservationRequest {
+public class CreateReservationRequestDto {
 
     @NotNull
     private UUID customerId;
@@ -23,5 +24,5 @@ public class CreateReservationRequest {
     private UUID sessionId;
 
     @NotEmpty
-    private List<CreateReservationItemRequest> items;
+    private List<CreateReservationItemRequestDto> items;
 }

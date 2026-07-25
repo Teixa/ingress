@@ -5,6 +5,7 @@ import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Getter
@@ -12,7 +13,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ReservationResponse {
+public class ReservationResponseDto {
 
     private UUID id;
 
@@ -28,5 +29,9 @@ public class ReservationResponse {
 
     private LocalDateTime expiresAt;
 
-    private List<ReservationItemResponse> items;
+    private LocalDateTime confirmedAt;
+
+    private LocalDateTime cancelledAt;
+
+    private List<ReservationItemResponseDto> items;
 }
