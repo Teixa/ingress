@@ -1,10 +1,14 @@
 package com.teixaa.events.service.impl;
 
+import com.teixaa.events.dto.request.CreateSessionPriceRequestDto;
 import com.teixaa.events.dto.request.CreateSessionRequestDto;
+import com.teixaa.events.dto.request.UpdateSessionPricesRequestDto;
 import com.teixaa.events.dto.response.SessionResponseDto;
 import com.teixaa.events.entity.Event;
 import com.teixaa.events.entity.Session;
+import com.teixaa.events.entity.SessionPrice;
 import com.teixaa.events.enums.SessionStatus;
+import com.teixaa.events.exception.ResourceException;
 import com.teixaa.events.exception.ResourceNotFoundException;
 import com.teixaa.events.mapper.SessionMapper;
 import com.teixaa.events.repository.SessionRepository;
@@ -13,8 +17,10 @@ import com.teixaa.events.service.ISessionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PathVariable;
 
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.Set;
 import java.util.UUID;
 
 @Service
@@ -38,19 +44,67 @@ public class SessionServiceImpl implements ISessionService {
 
         session.setStatus(SessionStatus.SCHEDULED);
 
+        Set<UUID> sectors = new HashSet<>();
+
+        if(Objects.nonNull(request.getPrices())) {
+            for (CreateSessionPriceRequestDto dto : request.getPrices()) {
+
+
+                SessionPrice sessionPrice = SessionPrice.builder()
+                        .session(session)
+                        .sectorId(dto.getSectorId())
+                        .unitPrice(dto.getUnitPrice())
+                        .build();
+
+                if (!sectors.add(sessionPrice.getSectorId())) {
+                    throw new ResourceException(
+                            "Duplicated sector price.");
+                }
+
+                session.getPrices().add(sessionPrice);
+            }
+        }
+
         session = sessionRepository.save(session);
 
         return sessionMapper.toResponse(session);
     }
 
-    public Session findSessionByEventIdAndId(@PathVariable UUID eventId, @PathVariable UUID id) {
+    @Override
+    public Session findSessionByEventIdAndId(UUID eventId, UUID id) {
         return sessionRepository.findByEventIdAndId(eventId, id).orElseThrow(
                 () -> new ResourceNotFoundException("Session", "id", id.toString())
         );
     }
 
-    public SessionResponseDto findByEventIdAndId(@PathVariable UUID eventId, @PathVariable UUID id) {
+    @Override
+    public SessionResponseDto findByEventIdAndId(UUID eventId, UUID id) {
         return sessionMapper.toResponse(findSessionByEventIdAndId(eventId, id));
+    }
+
+    @Override
+    @Transactional
+    public Session updateSessionPrices(
+            UUID sessionId,
+            UpdateSessionPricesRequestDto request) {
+
+        Session session = sessionRepository.findById(sessionId)
+                .orElseThrow(() -> new ResourceNotFoundException("Session", "id", sessionId.toString()));
+
+        session.getPrices().clear();
+
+        for (CreateSessionPriceRequestDto dto : request.getPrices()) {
+
+            SessionPrice sessionPrice = SessionPrice.builder()
+                    .session(session)
+                    .sectorId(dto.getSectorId())
+                    .unitPrice(dto.getUnitPrice())
+                    .build();
+
+            session.getPrices().add(sessionPrice);
+        }
+
+        return sessionRepository.save(session);
     }
 
 }

@@ -2,14 +2,13 @@ package com.teixaa.events.entity;
 
 import com.teixaa.events.enums.SessionStatus;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -48,6 +47,14 @@ public class Session extends BaseEntity {
     private String notes;
 
     private LocalDateTime gatesOpenAt;
+
+    @OneToMany(
+            mappedBy = "session",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    @Builder.Default
+    private List<SessionPrice> prices = new ArrayList<>();
 
 }
 

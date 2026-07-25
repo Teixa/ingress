@@ -2,6 +2,7 @@ package com.teixaa.events.controller.impl;
 
 import com.teixaa.events.controller.ISessionController;
 import com.teixaa.events.dto.request.CreateSessionRequestDto;
+import com.teixaa.events.dto.request.UpdateSessionPricesRequestDto;
 import com.teixaa.events.dto.response.SessionResponseDto;
 import com.teixaa.events.service.ISessionService;
 import jakarta.validation.Valid;
@@ -31,5 +32,11 @@ public class SessionControllerImpl implements ISessionController {
 
         return sessionService.findByEventIdAndId(eventId, id);
     }
+
+    @Override
+    public SessionResponseDto updateSessionPrices(UUID sessionId, UpdateSessionPricesRequestDto request) {
+        return sessionService.updateSessionPrices(sessionId, request);
+    }
+
 
 }

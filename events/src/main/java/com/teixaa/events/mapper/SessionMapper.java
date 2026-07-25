@@ -1,6 +1,7 @@
 package com.teixaa.events.mapper;
 
 import com.teixaa.events.dto.request.CreateSessionRequestDto;
+import com.teixaa.events.dto.request.UpdateSessionPricesRequestDto;
 import com.teixaa.events.dto.response.SessionResponseDto;
 import com.teixaa.events.entity.Session;
 import org.mapstruct.Mapper;
