@@ -1,6 +1,5 @@
 package com.teixaa.reservation.scheduler;
 
-import com.teixaa.reservation.service.IReservationService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import net.javacrumbs.shedlock.spring.annotation.SchedulerLock;

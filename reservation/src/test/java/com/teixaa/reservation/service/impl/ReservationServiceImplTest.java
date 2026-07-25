@@ -1,7 +1,5 @@
 package com.teixaa.reservation.service.impl;
 
-import com.teixaa.reservation.dto.request.AddItemRequestDto;
-import com.teixaa.reservation.dto.response.CartResponseDto;
 import com.teixaa.reservation.entity.Reservation;
 import com.teixaa.reservation.enums.ReservationStatus;
 import com.teixaa.reservation.feign.EventsClient;
@@ -10,8 +8,6 @@ import com.teixaa.reservation.feign.dto.SessionFeignDto;
 import com.teixaa.reservation.mapper.ReservationMapper;
 import com.teixaa.reservation.repository.ReservationItemRepository;
 import com.teixaa.reservation.repository.ReservationRepository;
-import com.teixaa.reservation.service.IInventoryService;
-import com.teixaa.reservation.service.IReservationItemService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

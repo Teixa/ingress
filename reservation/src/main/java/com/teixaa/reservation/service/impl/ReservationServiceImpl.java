@@ -1,9 +1,5 @@
 package com.teixaa.reservation.service.impl;
 
-import com.teixaa.reservation.dto.request.AddItemRequestDto;
-import com.teixaa.reservation.dto.request.CheckoutRequestDto;
-import com.teixaa.reservation.dto.response.CartResponseDto;
-import com.teixaa.reservation.dto.response.ReservationResponseDto;
 import com.teixaa.reservation.entity.Reservation;
 import com.teixaa.reservation.entity.ReservationItem;
 import com.teixaa.reservation.enums.ReservationStatus;
@@ -13,9 +9,6 @@ import com.teixaa.reservation.feign.VenuesClient;
 import com.teixaa.reservation.feign.dto.SeatFeignDto;
 import com.teixaa.reservation.mapper.ReservationMapper;
 import com.teixaa.reservation.repository.ReservationRepository;
-import com.teixaa.reservation.service.IReservationService;
-import com.teixaa.reservation.service.IReservationItemService;
-import com.teixaa.reservation.service.IInventoryService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;

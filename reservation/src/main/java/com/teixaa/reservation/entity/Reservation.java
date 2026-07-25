@@ -13,7 +13,15 @@ import java.util.UUID;
 import lombok.Builder;
 
 @Entity
-@Table(name = "reservation")
+@Table(
+        name = "reservations",
+        indexes = {
+                @Index(name = "idx_reservation_customer", columnList = "customer_id"),
+                @Index(name = "idx_reservation_session", columnList = "session_id"),
+                @Index(name = "idx_reservation_status", columnList = "status"),
+                @Index(name = "idx_reservation_expires", columnList = "expires_at")
+        }
+)
 @Getter
 @Setter
 @NoArgsConstructor
@@ -29,17 +37,29 @@ public class Reservation extends BaseEntity {
     @Column(name = "customer_id", nullable = false)
     private UUID customerId;
 
+    @Column(name = "event_id", nullable = false)
+    private UUID eventId;
+
+    @Column(name = "session_id", nullable = false)
+    private UUID sessionId;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false)
     private ReservationStatus status;
 
-    @Column(name = "total_amount")
-    private BigDecimal totalAmount;
+    @Column(nullable = false, precision = 10, scale = 2)
+    private BigDecimal totalAmount = BigDecimal.ZERO;
 
-    @Column(name = "expires_at")
+    @Column(name = "expires_at", nullable = false)
     private LocalDateTime expiresAt;
 
-    @OneToMany(mappedBy = "reservation", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @Column(name = "confirmed_at")
+    private LocalDateTime confirmedAt;
+
+    @Column(name = "cancelled_at")
+    private LocalDateTime cancelledAt;
+
+    @OneToMany(mappedBy = "reservation", cascade = CascadeType.ALL, orphanRemoval = true)
     @Builder.Default
     private List<ReservationItem> items = new ArrayList<>();
 
@@ -48,25 +68,7 @@ public class Reservation extends BaseEntity {
         if (this.status == null) {
             this.status = ReservationStatus.PENDING;
         }
-        if (this.totalAmount == null) {
-            this.totalAmount = BigDecimal.ZERO;
-        }
     }
 
-    public void addItem(ReservationItem item) {
-        item.setReservation(this);
-        this.items.add(item);
-        if (item.getPrice() != null) {
-            this.totalAmount = this.totalAmount.add(item.getPrice().multiply(java.math.BigDecimal.valueOf(item.getQuantity())));
-        }
-    }
-
-    public void removeItem(ReservationItem item) {
-        this.items.remove(item);
-        item.setReservation(null);
-        if (item.getPrice() != null) {
-            this.totalAmount = this.totalAmount.subtract(item.getPrice().multiply(java.math.BigDecimal.valueOf(item.getQuantity())));
-        }
-    }
 }
 

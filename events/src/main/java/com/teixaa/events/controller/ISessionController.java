@@ -1,6 +1,7 @@
 package com.teixaa.events.controller;
 
 import com.teixaa.events.dto.request.CreateSessionRequestDto;
+import com.teixaa.events.dto.request.UpdateSessionPricesRequestDto;
 import com.teixaa.events.dto.response.ErrorResponseDto;
 import com.teixaa.events.dto.response.EventResponseDto;
 import com.teixaa.events.dto.response.SessionResponseDto;
@@ -22,7 +23,7 @@ import java.util.UUID;
         description = "CRUD REST APIs in Ingress to CREATE, UPDATE, FETCH AND DELETE Events details"
 )
 @RestController()
-@RequestMapping(path = "/api/session", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(path = "/api", produces = MediaType.APPLICATION_JSON_VALUE)
 public interface ISessionController {
 
     @Operation(
@@ -44,7 +45,7 @@ public interface ISessionController {
             )
     }
     )
-    @PostMapping("/createSession/{eventId}/sessions")
+    @PostMapping("/events/{eventId}/sessions")
     @ResponseStatus(HttpStatus.CREATED)
     SessionResponseDto create(
             @PathVariable UUID eventId,
@@ -69,7 +70,11 @@ public interface ISessionController {
             )
     }
     )
-    @GetMapping("/fetchSessionDetails/{eventId}/{id}")
+    @GetMapping("/events/{eventId}/sessions/{id}")
     @ResponseStatus(HttpStatus.OK)
     SessionResponseDto fetchSessionDetails(@PathVariable UUID eventId, @PathVariable UUID id);
+
+    @PutMapping("/sessions/{sessionId}/prices")
+    @ResponseStatus(HttpStatus.OK)
+    SessionResponseDto updateSessionPrices(@PathVariable UUID sessionId, @Valid @RequestBody UpdateSessionPricesRequestDto request);
 }

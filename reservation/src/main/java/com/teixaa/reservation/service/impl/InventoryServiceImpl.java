@@ -1,6 +1,5 @@
 package com.teixaa.reservation.service.impl;
 
-import com.teixaa.reservation.service.IInventoryService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

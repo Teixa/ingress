@@ -1,9 +1,5 @@
 package com.teixaa.reservation.controller;
 
-import com.teixaa.reservation.dto.request.AddItemRequestDto;
-import com.teixaa.reservation.dto.request.CheckoutRequestDto;
-import com.teixaa.reservation.dto.response.CartResponseDto;
-import com.teixaa.reservation.dto.response.ReservationResponseDto;
 import com.teixaa.reservation.dto.response.ErrorResponseDto;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;

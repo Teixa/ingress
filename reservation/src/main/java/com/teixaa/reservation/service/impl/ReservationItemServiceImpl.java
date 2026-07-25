@@ -3,7 +3,6 @@ package com.teixaa.reservation.service.impl;
 import com.teixaa.reservation.entity.ReservationItem;
 import com.teixaa.reservation.exception.ResourceNotFoundException;
 import com.teixaa.reservation.repository.ReservationItemRepository;
-import com.teixaa.reservation.service.IReservationItemService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
