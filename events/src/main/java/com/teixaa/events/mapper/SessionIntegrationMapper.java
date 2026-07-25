@@ -5,7 +5,9 @@ import com.teixaa.events.entity.SessionPrice;
 import com.teixaa.events.integration.dto.SectorPriceIntegrationResponse;
 import com.teixaa.events.integration.dto.SessionIntegrationResponse;
 import com.teixaa.events.integration.dto.SessionPriceIntegrationResponse;
+import com.teixaa.events.integration.dto.SessionSectorPriceIntegrationResponse;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 import java.util.List;
 import java.util.UUID;
@@ -14,8 +16,6 @@ import java.util.UUID;
 public interface SessionIntegrationMapper {
 
     SessionIntegrationResponse toIntegration(Session session);
-
-    SectorPriceIntegrationResponse toIntegration(SessionPrice price);
 
     List<SectorPriceIntegrationResponse> toIntegration(
             List<SessionPrice> prices);
@@ -29,5 +29,11 @@ public interface SessionIntegrationMapper {
                 .prices(toIntegration(prices))
                 .build();
     }
+
+    @Mapping(target = "sessionId", source = "session.id")
+    @Mapping(target = "sectorId", source = "sectorId")
+    @Mapping(target = "unitPrice", source = "unitPrice")
+    SessionSectorPriceIntegrationResponse toIntegration(
+            SessionPrice sessionPrice);
 
 }

@@ -14,6 +14,9 @@ public interface SessionRepository  extends JpaRepository<Session, UUID> {
 
     Optional<Session> findByEventIdAndId(UUID eventId, UUID id);
 
-    @EntityGraph(attributePaths = "event")
+    @EntityGraph(attributePaths = {
+            "event",
+            "prices"
+    })
     Optional<Session> findById(UUID id);
 }

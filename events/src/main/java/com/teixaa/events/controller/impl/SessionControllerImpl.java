@@ -4,6 +4,7 @@ import com.teixaa.events.controller.ISessionController;
 import com.teixaa.events.dto.request.CreateSessionRequestDto;
 import com.teixaa.events.dto.request.UpdateSessionPricesRequestDto;
 import com.teixaa.events.dto.response.SessionResponseDto;
+import com.teixaa.events.integration.dto.SessionSectorPriceIntegrationResponse;
 import com.teixaa.events.service.ISessionService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;

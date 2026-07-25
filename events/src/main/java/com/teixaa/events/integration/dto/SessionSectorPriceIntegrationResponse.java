@@ -8,9 +8,14 @@ import java.util.UUID;
 @Getter
 @Setter
 @Builder
-public class SectorPriceIntegrationResponse {
+@NoArgsConstructor
+@AllArgsConstructor
+public class SessionSectorPriceIntegrationResponse {
+
+    private UUID sessionId;
 
     private UUID sectorId;
 
-    private BigDecimal price;
+    private BigDecimal unitPrice;
+
 }

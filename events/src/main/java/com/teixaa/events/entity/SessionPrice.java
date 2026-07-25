@@ -11,7 +11,15 @@ import java.math.BigDecimal;
 import java.util.UUID;
 
 @Entity
-@Table(name = "session_prices")
+@Table(
+        name = "session_prices",
+        uniqueConstraints = {
+                @UniqueConstraint(
+                        name = "uk_session_sector",
+                        columnNames = {"session_id", "sector_id"}
+                )
+        }
+)
 @Getter
 @Setter
 @NoArgsConstructor

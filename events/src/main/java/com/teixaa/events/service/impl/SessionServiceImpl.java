@@ -10,6 +10,7 @@ import com.teixaa.events.entity.SessionPrice;
 import com.teixaa.events.enums.SessionStatus;
 import com.teixaa.events.exception.ResourceException;
 import com.teixaa.events.exception.ResourceNotFoundException;
+import com.teixaa.events.integration.dto.SessionSectorPriceIntegrationResponse;
 import com.teixaa.events.mapper.SessionMapper;
 import com.teixaa.events.repository.SessionRepository;
 import com.teixaa.events.service.IEventService;
@@ -18,10 +19,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 @Service
 @RequiredArgsConstructor
@@ -39,6 +37,7 @@ public class SessionServiceImpl implements ISessionService {
         Event event = eventService.findEntityById(eventId);
 
         Session session = sessionMapper.toEntity(request);
+        session.setPrices(new ArrayList<>());
 
         session.setEvent(event);
 
@@ -84,7 +83,7 @@ public class SessionServiceImpl implements ISessionService {
 
     @Override
     @Transactional
-    public Session updateSessionPrices(
+    public SessionResponseDto updateSessionPrices(
             UUID sessionId,
             UpdateSessionPricesRequestDto request) {
 
@@ -103,8 +102,8 @@ public class SessionServiceImpl implements ISessionService {
 
             session.getPrices().add(sessionPrice);
         }
-
-        return sessionRepository.save(session);
+        return sessionMapper.toResponse(sessionRepository.save(session));
     }
+
 
 }

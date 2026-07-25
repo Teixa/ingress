@@ -6,6 +6,7 @@ import lombok.*;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Getter
@@ -41,5 +42,7 @@ public class SessionResponseDto {
     private LocalDateTime updatedAt;
 
     private String updatedBy;
+
+    private List<SessionPriceResponseDto> prices;
 }
 

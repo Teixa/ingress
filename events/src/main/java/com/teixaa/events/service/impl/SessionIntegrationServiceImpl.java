@@ -5,6 +5,7 @@ import com.teixaa.events.entity.SessionPrice;
 import com.teixaa.events.exception.ResourceNotFoundException;
 import com.teixaa.events.integration.dto.SessionIntegrationResponse;
 import com.teixaa.events.integration.dto.SessionPriceIntegrationResponse;
+import com.teixaa.events.integration.dto.SessionSectorPriceIntegrationResponse;
 import com.teixaa.events.mapper.SessionIntegrationMapper;
 import com.teixaa.events.repository.SessionPriceRepository;
 import com.teixaa.events.repository.SessionRepository;
@@ -19,8 +20,7 @@ import java.util.UUID;
 @Service
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
-public class SessionIntegrationServiceImpl
-        implements ISessionIntegrationService {
+public class SessionIntegrationServiceImpl implements ISessionIntegrationService {
 
     private final SessionRepository sessionRepository;
 
@@ -45,6 +45,21 @@ public class SessionIntegrationServiceImpl
                 sessionPriceRepository.findAllBySessionId(sessionId);
 
         return mapper.toIntegration(sessionId, prices);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public SessionSectorPriceIntegrationResponse getSectorPrice(
+            UUID sessionId,
+            UUID sectorId) {
+
+        SessionPrice sessionPrice = sessionPriceRepository
+                .findBySessionIdAndSectorId(sessionId, sectorId)
+                .orElseThrow(() ->
+                        new ResourceNotFoundException(
+                                "Price not found for session and sector", "sessionId sectorId", sessionId.toString() + sectorId.toString()));
+
+        return mapper.toIntegration(sessionPrice);
     }
 
 }
