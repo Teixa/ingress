@@ -1,6 +1,6 @@
 package com.teixaa.reservation.integration.event.dto;
 
-import com.teixaa.reservation.feign.enums.SessionStatus;
+import com.teixaa.reservation.integration.enums.SessionStatus;
 import lombok.*;
 
 import java.time.LocalDateTime;

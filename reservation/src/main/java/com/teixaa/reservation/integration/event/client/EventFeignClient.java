@@ -1,5 +1,6 @@
 package com.teixaa.reservation.integration.event.client;
 
+
 import com.teixaa.reservation.integration.event.dto.SessionIntegrationResponse;
 import com.teixaa.reservation.integration.event.dto.SessionPriceIntegrationResponse;
 import com.teixaa.reservation.integration.event.dto.SessionSectorPriceIntegrationResponse;
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.UUID;
 
 @FeignClient(
-        name = "event-service",
+        name = "event",
         path = "/api/integration/sessions"
 )
 public interface EventFeignClient {

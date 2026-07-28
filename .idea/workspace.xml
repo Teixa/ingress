@@ -7,51 +7,30 @@
     <option name="selectedModelId" value="auto" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e300e1cd-a8f0-47fb-bce0-7a2d77e6387d" name="Changes" comment="atualizações do events para adicionar price">
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/dto/response/SessionPriceResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/integration/dto/SessionSectorPriceIntegrationResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/ISessionPriceService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/impl/SessionPriceServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/integration/event/dto/SectorPriceIntegrationResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/integration/event/dto/SessionIntegrationResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/integration/event/dto/SessionPriceIntegrationResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/integration/event/dto/SessionSectorPriceIntegrationResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/validator/ReservationValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/validator/SeatValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/validator/SessionValidator.java" afterDir="false" />
+    <list default="true" id="e300e1cd-a8f0-47fb-bce0-7a2d77e6387d" name="Changes" comment="adiciona dtos, integracao, ajusta mapper">
+      <change afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/exception/BusinessException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/service/IPricingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/service/IReservationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/service/impl/PricingServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/ISessionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/ISessionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/api/ISessionIntegrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/api/ISessionIntegrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/impl/SessionControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/impl/SessionControllerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/integration/SessionIntegrationControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/integration/SessionIntegrationControllerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/dto/response/SessionResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/dto/response/SessionResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/entity/SessionPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/entity/SessionPrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/integration/dto/SectorPriceIntegrationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/integration/dto/SectorPriceIntegrationResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/integration/dto/SessionPriceIntegrationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/integration/dto/SessionPriceIntegrationResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/mapper/SessionIntegrationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/mapper/SessionIntegrationMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/mapper/SessionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/mapper/SessionMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/repository/SessionPriceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/repository/SessionPriceRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/repository/SessionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/repository/SessionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/ISessionIntegrationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/ISessionIntegrationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/ISessionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/ISessionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/impl/SessionIntegrationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/impl/SessionIntegrationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/impl/SessionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/impl/SessionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/ReservationApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/ReservationApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/dto/request/CreateReservationItemRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/dto/request/CreateReservationItemRequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/dto/request/CreateReservationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/dto/request/CreateReservationRequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/dto/response/ReservationItemResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/dto/response/ReservationItemResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/dto/response/ReservationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/dto/response/ReservationResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/config/SchedulingConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/config/SchedulingConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/controller/IReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/controller/IReservationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/controller/impl/ReservationControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/controller/impl/ReservationControllerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/entity/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/entity/Reservation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/entity/ReservationItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/entity/ReservationItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/integration/event/client/EventClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/integration/event/client/EventClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/integration/event/client/EventClientImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/integration/event/client/EventClientImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/feign/EventsClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/feign/VenuesClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/feign/dto/SeatFeignDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/feign/dto/SessionFeignDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/feign/enums/SessionStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/integration/enums/SessionStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/integration/event/client/EventFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/integration/event/client/EventFeignClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/integration/event/dto/SectorPriceResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/integration/event/dto/SessionPriceResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/integration/event/dto/SessionResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/integration/event/dto/SectorPriceIntegrationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/integration/event/dto/SectorPriceIntegrationResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/integration/event/dto/SessionIntegrationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/integration/event/dto/SessionIntegrationResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/mapper/ReservationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/mapper/ReservationMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/repository/ReservationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/repository/ReservationRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/scheduler/ReservationExpirationScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/scheduler/ReservationExpirationScheduler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/service/impl/InventoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/service/impl/InventoryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/service/impl/ReservationItemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/service/impl/ReservationItemServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/service/impl/ReservationItemServiceImpl.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/service/impl/ReservationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/service/impl/ReservationServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -122,49 +101,52 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven.eurekaserver [clean].executor": "Run",
-    "Maven.eurekaserver [install].executor": "Run",
-    "Maven.events [clean].executor": "Run",
-    "Maven.events [install].executor": "Run",
-    "Maven.reservation [clean].executor": "Run",
-    "Maven.reservation [compile].executor": "Run",
-    "Maven.reservation [install].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.CustomerApplication.executor": "Debug",
-    "Spring Boot.EurekaserverApplication.executor": "Debug",
-    "Spring Boot.EventsApplication.executor": "Debug",
-    "Spring Boot.ReservationApplication.executor": "Debug",
-    "Spring Boot.VenueApplication.executor": "Debug",
-    "Spring Boot.VenuesApplication.executor": "Debug",
-    "copilot.chat.legacySessionMetadata.migrated": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/DEV/workspaces/ingress/reservation",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.eurekaserver [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.eurekaserver [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.events [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.events [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.reservation [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.reservation [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.reservation [install].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.CustomerApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.EurekaserverApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.EventsApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.ReservationApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.VenueApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;Spring Boot.VenuesApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;copilot.chat.legacySessionMetadata.migrated&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/DEV/workspaces/ingress/reservation&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\DEV\workspaces\ingress\reservation" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.teixaa.reservation.service" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.teixaa.reservation.exception" />
       <recent name="com.teixaa.events.exception" />
       <recent name="com.teixaa.reservation.feign.enums" />
       <recent name="com.teixaa.venue.exception" />
       <recent name="com.teixaa.venue.dto.response" />
-      <recent name="com.teixaa.venue.audit" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.EventsApplication">
+  <component name="RunManager" selected="Spring Boot.ReservationApplication">
     <configuration name="CustomerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
       <module name="customer" />
@@ -237,11 +219,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.ReservationApplication" />
         <item itemvalue="Spring Boot.EventsApplication" />
-        <item itemvalue="Spring Boot.CustomerApplication" />
         <item itemvalue="Spring Boot.VenuesApplication" />
         <item itemvalue="Spring Boot.EurekaserverApplication" />
-        <item itemvalue="Spring Boot.ReservationApplication" />
+        <item itemvalue="Spring Boot.CustomerApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -348,7 +330,23 @@
       <option name="project" value="LOCAL" />
       <updated>1784946164284</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="adiciona funcionalidades events">
+      <option name="closed" value="true" />
+      <created>1785020750826</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1785020750826</updated>
+    </task>
+    <task id="LOCAL-00013" summary="adiciona dtos, integracao, ajusta mapper">
+      <option name="closed" value="true" />
+      <created>1785020778168</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1785020778168</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -363,26 +361,13 @@
     <MESSAGE value="inicia reservations" />
     <MESSAGE value="atualiza reservations" />
     <MESSAGE value="atualizações do events para adicionar price" />
-    <option name="LAST_COMMIT_MESSAGE" value="atualizações do events para adicionar price" />
+    <MESSAGE value="adiciona funcionalidades events" />
+    <MESSAGE value="adiciona dtos, integracao, ajusta mapper" />
+    <option name="LAST_COMMIT_MESSAGE" value="adiciona dtos, integracao, ajusta mapper" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/service/impl/ReservationServiceImpl.java</url>
-          <line>72</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/service/impl/ReservationServiceImpl.java</url>
-          <line>80</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/service/impl/ReservationServiceImpl.java</url>
-          <line>73</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/impl/SessionServiceImpl.java</url>
           <line>36</line>
@@ -392,6 +377,16 @@
           <url>file://$PROJECT_DIR$/events/src/main/java/com/teixaa/events/service/impl/SessionServiceImpl.java</url>
           <line>43</line>
           <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/controller/impl/ReservationControllerImpl.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/service/impl/ReservationServiceImpl.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

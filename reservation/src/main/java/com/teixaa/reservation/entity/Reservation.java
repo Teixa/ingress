@@ -1,16 +1,17 @@
 package com.teixaa.reservation.entity;
 
+
 import com.teixaa.reservation.enums.ReservationStatus;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import java.math.BigDecimal;
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-import lombok.Builder;
 
 @Entity
 @Table(
@@ -23,52 +24,88 @@ import lombok.Builder;
         }
 )
 @Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
-@ToString
 public class Reservation extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @Column(name = "customer_id", nullable = false)
+    @Setter
+    @Column(nullable = false)
     private UUID customerId;
 
-    @Column(name = "event_id", nullable = false)
+    @Setter
+    @Column(nullable = false)
     private UUID eventId;
 
-    @Column(name = "session_id", nullable = false)
+    @Setter
+    @Column(nullable = false)
     private UUID sessionId;
 
+    @Setter
     @Enumerated(EnumType.STRING)
-    @Column(name = "status", nullable = false)
+    @Column(nullable = false)
     private ReservationStatus status;
 
     @Column(nullable = false, precision = 10, scale = 2)
-    private BigDecimal totalAmount = BigDecimal.ZERO;
+    private BigDecimal totalAmount;
 
-    @Column(name = "expires_at", nullable = false)
+    @Setter
     private LocalDateTime expiresAt;
 
-    @Column(name = "confirmed_at")
     private LocalDateTime confirmedAt;
 
-    @Column(name = "cancelled_at")
     private LocalDateTime cancelledAt;
 
-    @OneToMany(mappedBy = "reservation", cascade = CascadeType.ALL, orphanRemoval = true)
     @Builder.Default
+    @OneToMany(
+            mappedBy = "reservation",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
     private List<ReservationItem> items = new ArrayList<>();
 
     @PrePersist
     public void prePersist() {
-        if (this.status == null) {
-            this.status = ReservationStatus.PENDING;
+        if (status == null) {
+            status = ReservationStatus.PENDING;
+        }
+
+        if (totalAmount == null) {
+            totalAmount = BigDecimal.ZERO;
         }
     }
 
-}
+    public void addItem(ReservationItem item) {
+        item.setReservation(this);
+        items.add(item);
+    }
 
+    public void removeItem(ReservationItem item) {
+        items.remove(item);
+        item.setReservation(null);
+    }
+
+    public void updateTotalAmount(BigDecimal total) {
+        this.totalAmount = total;
+    }
+
+    public void confirm() {
+        this.status = ReservationStatus.CONFIRMED;
+        this.confirmedAt = LocalDateTime.now();
+    }
+
+    public void cancel() {
+        this.status = ReservationStatus.CANCELLED;
+        this.cancelledAt = LocalDateTime.now();
+    }
+
+    public void startReservation(Duration expirationTime) {
+        this.status = ReservationStatus.PENDING;
+        this.expiresAt = LocalDateTime.now().plus(expirationTime);
+    }
+
+}

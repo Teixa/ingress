@@ -12,5 +12,5 @@ public class SectorPriceIntegrationResponse {
 
     private UUID sectorId;
 
-    private BigDecimal price;
+    private BigDecimal unitPrice;
 }

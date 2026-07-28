@@ -17,16 +17,5 @@ import java.util.UUID;
 public interface ReservationRepository extends JpaRepository<Reservation, UUID> {
 
     List<Reservation> findByCustomerId(UUID customerId);
-
-    List<Reservation> findByStatusAndExpiresAtBefore(ReservationStatus status, LocalDateTime time);
-
-    Optional<Reservation> findByIdAndStatus(UUID id, ReservationStatus status);
-
-    @Lock(LockModeType.PESSIMISTIC_WRITE)
-    @QueryHints({
-            @QueryHint(name = "jakarta.persistence.lock.timeout", value = "2000") // 2 segundos
-    })
-    @Query("select r from Reservation r where r.id = :id")
-    Optional<Reservation> findByIdForUpdate(UUID id);
 }
 

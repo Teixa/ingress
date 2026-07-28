@@ -1,4 +1,4 @@
-package com.teixaa.reservation.feign.enums;
+package com.teixaa.reservation.integration.enums;
 
 public enum SessionStatus {
     SCHEDULED,

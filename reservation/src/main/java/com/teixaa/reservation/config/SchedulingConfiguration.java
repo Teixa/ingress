@@ -14,14 +14,14 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableSchedulerLock(defaultLockAtMostFor = "15m") // Formato simplificado string ou use Duration
 public class SchedulingConfiguration {
 
-    @Bean
-    public LockProvider lockProvider(JdbcTemplate jdbcTemplate) {
-        // Nas versões 5.x do ShedLock, injetar diretamente o JdbcTemplate é o padrão recomendado
-        return new JdbcTemplateLockProvider(
-                JdbcTemplateLockProvider.Configuration.builder()
-                        .withJdbcTemplate(jdbcTemplate)
-                        .usingDbTime() // Garante o uso do relógio do sgbd
-                        .build()
-        );
-    }
+//    @Bean
+//    public LockProvider lockProvider(JdbcTemplate jdbcTemplate) {
+//        // Nas versões 5.x do ShedLock, injetar diretamente o JdbcTemplate é o padrão recomendado
+//        return new JdbcTemplateLockProvider(
+//                JdbcTemplateLockProvider.Configuration.builder()
+//                        .withJdbcTemplate(jdbcTemplate)
+//                        .usingDbTime() // Garante o uso do relógio do sgbd
+//                        .build()
+//        );
+//    }
 }

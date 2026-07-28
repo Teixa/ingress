@@ -20,14 +20,21 @@ public interface ReservationMapper {
 
     ReservationResponseDto toResponse(Reservation reservation);
 
-    @Mapping(target = "subtotal", expression = "java(item.getSubtotal())")
+    @Mapping(target = "subtotal",
+            expression = "java(item.getSubtotal())")
     ReservationItemResponseDto toResponse(
             ReservationItem item);
 
-    List<ReservationItemResponseDto> toResponse(
-            List<ReservationItem> items);
+    @AfterMapping
+    default void linkItems(@MappingTarget Reservation reservation) {
 
+        if (reservation.getItems() == null) {
+            return;
+        }
 
+        reservation.getItems().forEach(item ->
+                item.setReservation(reservation));
+    }
 
 }
 
