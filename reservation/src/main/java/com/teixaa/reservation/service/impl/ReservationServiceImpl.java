@@ -3,6 +3,8 @@ package com.teixaa.reservation.service.impl;
 import com.teixaa.reservation.dto.request.CreateReservationRequestDto;
 import com.teixaa.reservation.dto.response.ReservationResponseDto;
 import com.teixaa.reservation.entity.Reservation;
+import com.teixaa.reservation.enums.ReservationStatus;
+import com.teixaa.reservation.exception.BusinessException;
 import com.teixaa.reservation.exception.ResourceNotFoundException;
 import com.teixaa.reservation.mapper.ReservationMapper;
 import com.teixaa.reservation.repository.ReservationRepository;
@@ -77,15 +79,23 @@ public class ReservationServiceImpl implements IReservationService {
     }
 
     @Override
-    public void cancel(UUID id) {
+    public void cancel(UUID reservationId) {
 
-        Reservation reservation =
-                reservationRepository.findById(id)
-                        .orElseThrow(() ->
-                                new ResourceNotFoundException(
-                                        "Reservation",
-                                        "id",
-                                        id.toString()));
+        Reservation reservation = reservationRepository.findById(reservationId)
+                .orElseThrow(() -> new ResourceNotFoundException(
+                        "Reservation",
+                        "id",
+                        reservationId.toString()));
+
+        if (reservation.getStatus() == ReservationStatus.CONFIRMED) {
+            throw new BusinessException(
+                    "Confirmed reservations cannot be cancelled.");
+        }
+
+        if (reservation.getStatus() == ReservationStatus.CANCELLED) {
+            throw new BusinessException(
+                    "Reservation is already cancelled.");
+        }
 
         reservation.cancel();
 

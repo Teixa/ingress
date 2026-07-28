@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.UUID;
 
 @FeignClient(
-        name = "event",
+        name = "events",
         path = "/api/integration/sessions"
 )
 public interface EventFeignClient {

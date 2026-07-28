@@ -17,10 +17,10 @@ import java.util.UUID;
 @Table(
         name = "reservations",
         indexes = {
-                @Index(name = "idx_reservation_customer", columnList = "customer_id"),
-                @Index(name = "idx_reservation_session", columnList = "session_id"),
-                @Index(name = "idx_reservation_status", columnList = "status"),
-                @Index(name = "idx_reservation_expires", columnList = "expires_at")
+                @Index(name = "idx_reservations_customer", columnList = "customer_id"),
+                @Index(name = "idx_reservations_session", columnList = "session_id"),
+                @Index(name = "idx_reservations_status", columnList = "status"),
+                @Index(name = "idx_reservations_expires", columnList = "expires_at")
         }
 )
 @Getter

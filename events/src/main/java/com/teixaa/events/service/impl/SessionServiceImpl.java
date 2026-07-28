@@ -10,7 +10,6 @@ import com.teixaa.events.entity.SessionPrice;
 import com.teixaa.events.enums.SessionStatus;
 import com.teixaa.events.exception.ResourceException;
 import com.teixaa.events.exception.ResourceNotFoundException;
-import com.teixaa.events.integration.dto.SessionSectorPriceIntegrationResponse;
 import com.teixaa.events.mapper.SessionMapper;
 import com.teixaa.events.repository.SessionRepository;
 import com.teixaa.events.service.IEventService;
@@ -70,15 +69,15 @@ public class SessionServiceImpl implements ISessionService {
     }
 
     @Override
-    public Session findSessionByEventIdAndId(UUID eventId, UUID id) {
-        return sessionRepository.findByEventIdAndId(eventId, id).orElseThrow(
-                () -> new ResourceNotFoundException("Session", "id", id.toString())
+    public Session findSessionById(UUID id) {
+        return sessionRepository.findById(id).orElseThrow(
+                () -> new ResourceNotFoundException("id", "id", id.toString())
         );
     }
 
     @Override
-    public SessionResponseDto findByEventIdAndId(UUID eventId, UUID id) {
-        return sessionMapper.toResponse(findSessionByEventIdAndId(eventId, id));
+    public SessionResponseDto findById(UUID id) {
+        return sessionMapper.toResponse(findSessionById(id));
     }
 
     @Override

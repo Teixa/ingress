@@ -1,5 +1,6 @@
 package com.teixaa.reservation.mapper;
 
+import com.teixaa.reservation.dto.request.CreateReservationItemRequestDto;
 import com.teixaa.reservation.dto.request.CreateReservationRequestDto;
 import com.teixaa.reservation.dto.response.ReservationItemResponseDto;
 import com.teixaa.reservation.dto.response.ReservationResponseDto;
@@ -18,12 +19,15 @@ public interface ReservationMapper {
 
     Reservation toEntity(CreateReservationRequestDto dto);
 
+    ReservationItem toEntity(CreateReservationItemRequestDto dto);
+
     ReservationResponseDto toResponse(Reservation reservation);
 
-    @Mapping(target = "subtotal",
-            expression = "java(item.getSubtotal())")
-    ReservationItemResponseDto toResponse(
-            ReservationItem item);
+    @Mapping(
+            target = "subtotal",
+            expression = "java(item.getSubtotal())"
+    )
+    ReservationItemResponseDto toResponse(ReservationItem item);
 
     @AfterMapping
     default void linkItems(@MappingTarget Reservation reservation) {
@@ -37,4 +41,3 @@ public interface ReservationMapper {
     }
 
 }
-

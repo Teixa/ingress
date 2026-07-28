@@ -1,41 +1,72 @@
--- Note: Removed Postgres-specific extension and defaults to keep schema portable for H2 tests.
--- For Postgres production you can enable uuid-ossp and set defaults (uuid_generate_v4()).
+CREATE TABLE IF NOT EXISTS reservations (
+                                            id UUID PRIMARY KEY,
 
-CREATE TABLE IF NOT EXISTS reservation (
-    id uuid PRIMARY KEY,
-    customer_id uuid NOT NULL,
-    status varchar(20) NOT NULL,
-    total_amount numeric(12,2) DEFAULT 0,
-    created_at timestamp without time zone DEFAULT now(),
-    expires_at timestamp without time zone,
-    created_by varchar(100),
-    updated_at timestamp without time zone,
-    updated_by varchar(100)
-);
+                                            customer_id UUID NOT NULL,
+                                            event_id UUID NOT NULL,
+                                            session_id UUID NOT NULL,
 
-CREATE TABLE IF NOT EXISTS reservation_item (
-    id uuid PRIMARY KEY,
-    reservation_id uuid NOT NULL REFERENCES reservation(id) ON DELETE CASCADE,
-    event_id uuid NOT NULL,
-    session_id uuid NOT NULL,
-    seat_id uuid,
-    price numeric(12,2) NOT NULL,
-    quantity integer NOT NULL DEFAULT 1
-);
+                                            status VARCHAR(30) NOT NULL,
+
+    total_amount NUMERIC(10,2) NOT NULL DEFAULT 0,
+
+    expires_at TIMESTAMP,
+    confirmed_at TIMESTAMP,
+    cancelled_at TIMESTAMP,
+
+    created_at TIMESTAMP,
+    created_by VARCHAR(100),
+    updated_at TIMESTAMP,
+    updated_by VARCHAR(100)
+    );
+
+CREATE TABLE IF NOT EXISTS reservation_items (
+                                                 id UUID PRIMARY KEY,
+
+                                                 reservation_id UUID NOT NULL,
+
+                                                 sector_id UUID NOT NULL,
+                                                 seat_id UUID,
+
+                                                 quantity INTEGER NOT NULL DEFAULT 1,
+
+                                                 unit_price NUMERIC(10,2) NOT NULL DEFAULT 0,
+
+    created_at TIMESTAMP,
+    created_by VARCHAR(100),
+    updated_at TIMESTAMP,
+    updated_by VARCHAR(100),
+
+    CONSTRAINT fk_reservation_item_reservation
+    FOREIGN KEY (reservation_id)
+    REFERENCES reservations(id)
+    ON DELETE CASCADE
+    );
 
 CREATE TABLE IF NOT EXISTS shedlock (
-    name varchar(64) NOT NULL,
-    lock_until timestamp NOT NULL,
-    locked_at timestamp NOT NULL,
-    locked_by varchar(255) NOT NULL,
+                                        name VARCHAR(64) NOT NULL,
+    lock_until TIMESTAMP NOT NULL,
+    locked_at TIMESTAMP NOT NULL,
+    locked_by VARCHAR(255) NOT NULL,
     PRIMARY KEY (name)
-);
+    );
 
-CREATE INDEX IF NOT EXISTS idx_reservation_customer ON reservation(customer_id);
-CREATE INDEX IF NOT EXISTS idx_reservation_status_expires ON reservation(status, expires_at);
+CREATE INDEX IF NOT EXISTS idx_reservation_customer
+    ON reservations(customer_id);
 
--- If you prefer DB-generated UUIDs in Postgres, run:
--- CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
--- and set column defaults to uuid_generate_v4().
+CREATE INDEX IF NOT EXISTS idx_reservation_session
+    ON reservations(session_id);
 
+CREATE INDEX IF NOT EXISTS idx_reservation_status
+    ON reservations(status);
 
+CREATE INDEX IF NOT EXISTS idx_reservation_expires
+    ON reservations(expires_at);
+
+CREATE INDEX IF NOT EXISTS idx_item_reservation
+    ON reservation_items(reservation_id);
+
+CREATE INDEX IF NOT EXISTS idx_item_sector
+    ON reservation_items(sector_id);
+
+CREATE INDEX IF NOT EXISTS idx_item_seat
+    ON reservation_items(seat_id);
