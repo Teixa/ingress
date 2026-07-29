@@ -1,5 +1,8 @@
 package com.teixaa.reservation.validator;
 
+import com.teixaa.reservation.dto.request.CreateReservationRequestDto;
+import com.teixaa.reservation.integration.venue.VenueFeignClient;
+import com.teixaa.reservation.mapper.SeatValidationMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -7,9 +10,13 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class SeatValidator {
 
-    public void validate() {
+    private final VenueFeignClient venueFeignClient;
+    private final SeatValidationMapper mapper;
 
-        // implementação virá após integrar o Venue Service
+    public void validate(CreateReservationRequestDto request) {
+
+        venueFeignClient.validateSeats(
+                mapper.toRequest(request));
 
     }
 

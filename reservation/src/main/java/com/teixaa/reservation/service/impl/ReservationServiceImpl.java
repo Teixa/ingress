@@ -11,6 +11,7 @@ import com.teixaa.reservation.repository.ReservationRepository;
 import com.teixaa.reservation.service.IPricingService;
 import com.teixaa.reservation.service.IReservationService;
 import com.teixaa.reservation.validator.ReservationValidator;
+import com.teixaa.reservation.validator.SeatValidator;
 import com.teixaa.reservation.validator.SessionValidator;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -33,6 +34,7 @@ public class ReservationServiceImpl implements IReservationService {
     private final ReservationValidator reservationValidator;
     private final SessionValidator sessionValidator;
     private final IPricingService pricingService;
+    private final SeatValidator seatValidator;
 
     @Override
     public ReservationResponseDto create(CreateReservationRequestDto request) {
@@ -40,6 +42,8 @@ public class ReservationServiceImpl implements IReservationService {
         reservationValidator.validate(request);
 
         sessionValidator.validate(request.getSessionId());
+
+        seatValidator.validate(request);
 
         Reservation reservation =
                 reservationMapper.toEntity(request);

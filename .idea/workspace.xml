@@ -7,13 +7,26 @@
     <option name="selectedModelId" value="auto" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e300e1cd-a8f0-47fb-bce0-7a2d77e6387d" name="Changes" comment="adiciona docker e postgresql para ambiente com docker">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="e300e1cd-a8f0-47fb-bce0-7a2d77e6387d" name="Changes" comment="adiciona ms gatewayserver">
+      <change afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/mapper/SeatValidationMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/controller/integration/SeatIntegrationControllerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/controller/integration/api/ISeatIntegrationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/exception/BusinessException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/integration/dto/SeatValidationItemDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/integration/dto/ValidateSeatsRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/service/ISeatIntegrationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/service/impl/SeatIntegrationServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservation/src/test/java/com/teixaa/reservation/service/impl/ReservationServiceImplTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservation/src/test/resources/application-test.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/api/ISessionIntegrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/integration/api/ISessionIntegrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/integration/SessionIntegrationControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/integration/SessionIntegrationControllerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/integration/venue/VenueClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/integration/venue/VenueClientImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/integration/venue/VenueFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/integration/venue/VenueFeignClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/integration/venue/dto/SeatResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/integration/venue/dto/ValidateSeatsRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/integration/venue/dto/SectorResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/integration/venue/dto/SeatValidationItemRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/service/impl/ReservationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/service/impl/ReservationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/validator/SeatValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/validator/SeatValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/repository/SeatRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/repository/SeatRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,11 +142,11 @@
       <recent name="com.teixaa.reservation.service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.teixaa.venues.exception" />
       <recent name="com.teixaa.reservation.exception" />
       <recent name="com.teixaa.events.exception" />
       <recent name="com.teixaa.reservation.feign.enums" />
       <recent name="com.teixaa.venue.exception" />
-      <recent name="com.teixaa.venue.dto.response" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.ReservationApplication">
@@ -360,7 +373,15 @@
       <option name="project" value="LOCAL" />
       <updated>1785356708835</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="adiciona ms gatewayserver">
+      <option name="closed" value="true" />
+      <created>1785359011246</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1785359011246</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -380,7 +401,8 @@
     <MESSAGE value="finaliza ajustes em reservation para ser funcional" />
     <MESSAGE value="ajusta schema e feign" />
     <MESSAGE value="adiciona docker e postgresql para ambiente com docker" />
-    <option name="LAST_COMMIT_MESSAGE" value="adiciona docker e postgresql para ambiente com docker" />
+    <MESSAGE value="adiciona ms gatewayserver" />
+    <option name="LAST_COMMIT_MESSAGE" value="adiciona ms gatewayserver" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -389,11 +411,6 @@
           <url>file://$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/controller/impl/ReservationControllerImpl.java</url>
           <line>20</line>
           <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/service/impl/ReservationServiceImpl.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="36" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

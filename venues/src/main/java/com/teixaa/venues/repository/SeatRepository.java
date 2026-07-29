@@ -1,9 +1,11 @@
 package com.teixaa.venues.repository;
 
 import com.teixaa.venues.entity.Seat;
+import org.jspecify.annotations.NonNull;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 public interface SeatRepository extends JpaRepository<Seat, UUID> {
@@ -14,5 +16,9 @@ public interface SeatRepository extends JpaRepository<Seat, UUID> {
             UUID sectorId,
             String seatRow,
             String seatNumber);
+
+    @NonNull Optional<Seat> findById(UUID id);
+
+    boolean existsById(UUID id);
 
 }

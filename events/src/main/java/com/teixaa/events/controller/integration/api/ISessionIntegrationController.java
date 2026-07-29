@@ -1,4 +1,4 @@
-package com.teixaa.events.controller.api;
+package com.teixaa.events.controller.integration.api;
 
 import com.teixaa.events.integration.dto.SessionIntegrationResponse;
 import com.teixaa.events.integration.dto.SessionPriceIntegrationResponse;
