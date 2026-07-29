@@ -4,18 +4,8 @@ server:
 spring:
   application:
     name: reservation
-  datasource:
-    url: jdbc:h2:mem:testdb
-    driverClassName: org.h2.Driver
-    username: sa
-    password: ''
-  h2:
-    console:
-      enabled: true
-  jpa:
-    hibernate:
-      ddl-auto: none
-    show-sql: false
+  profiles:
+    active: dev
 
 kafka:
   bootstrap-servers: localhost:9092

@@ -1,0 +1,11 @@
+CREATE DATABASE customer;
+
+CREATE DATABASE events;
+
+CREATE DATABASE venues;
+
+CREATE DATABASE reservation;
+
+CREATE DATABASE payment;
+
+CREATE DATABASE notification;

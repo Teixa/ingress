@@ -1,0 +1,141 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      SPRING_PROFILES_ACTIVE: docker
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./docker/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    extends:
+      file: common-config.yml
+      service: network-deploy-service
+
+  kafka:
+    image: apache/kafka:4.1.1
+    hostname: kafka
+    container_name: kafka
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT,CONTROLLER:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://kafka:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_NODE_ID: 1
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:29093
+      KAFKA_LISTENERS: PLAINTEXT://kafka:29092,CONTROLLER://kafka:29093,PLAINTEXT_HOST://kafka:9092
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_LOG_DIRS: /tmp/kraft-combined-logs
+      CLUSTER_ID: MkU3OEVBNTcwNTJENDM2Qk
+    healthcheck:
+      test: [ "CMD-SHELL", "nc -z kafka 9092 || exit 1" ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 5s
+    extends:
+      file: common-config.yml
+      service: network-deploy-service
+
+  eurekaserver:
+    image: "teixaa/eurekaserver:s1"
+    container_name: eurekaserver-ms
+    ports:
+      - "8070:8070"
+    extends:
+      file: common-config.yml
+      service: microservice-base-config
+    environment:
+      SPRING_APPLICATION_NAME: "eurekaserver"
+      OTEL_SERVICE_NAME: "eurekaserver"
+
+  events:
+    image: "teixaa/events:s1"
+    container_name: events-ms
+    ports:
+      - "9000:9000"
+    depends_on:
+      kafka:
+        condition: service_healthy
+    healthcheck:
+      test: "curl --fail --silent localhost:8080/actuator/health/readiness | grep UP || exit 1"
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    environment:
+      SPRING_APPLICATION_NAME: "events"
+      OTEL_SERVICE_NAME: "events"
+      SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS: "kafka:9092"
+      SPRING_PROFILES_ACTIVE: docker
+    extends:
+      file: common-config.yml
+      service: microservice-eureka-config
+
+  reservation:
+    image: "teixaa/reservation:s1"
+    container_name: reservation-ms
+    ports:
+      - "8085:8085"
+    depends_on:
+      kafka:
+        condition: service_healthy
+    healthcheck:
+      test: "curl --fail --silent localhost:8080/actuator/health/readiness | grep UP || exit 1"
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_APPLICATION_NAME: "reservation"
+      OTEL_SERVICE_NAME: "reservation"
+      SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS: "kafka:9092"
+    extends:
+      file: common-config.yml
+      service: microservice-eureka-config
+
+  venues:
+    image: "teixaa/venues:s1"
+    container_name: venues-ms
+    ports:
+      - "8090:8090"
+    depends_on:
+      kafka:
+        condition: service_healthy
+    healthcheck:
+      test: "curl --fail --silent localhost:8080/actuator/health/readiness | grep UP || exit 1"
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_APPLICATION_NAME: "venues"
+      OTEL_SERVICE_NAME: "venues"
+      SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS: "kafka:9092"
+    extends:
+      file: common-config.yml
+      service: microservice-eureka-config
+
+networks:
+  ingress:
+    driver: "bridge"
+
+volumes:
+  postgres_data:
