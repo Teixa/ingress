@@ -18,17 +18,21 @@ management:
     env:
       enabled: true
 
-eureka:
-  instance:
-    preferIpAddress: true
-  client:
-    fetchRegistry: true
-    registerWithEureka: true
-    serviceUrl:
-      defaultZone: http://localhost:8070/eureka/
-
 info:
   app:
     name: "events"
     description: "application of events"
     version: "1.0.0"
+
+logging:
+  level:
+    root: INFO
+    com.teixaa: DEBUG
+    org.springframework.kafka: INFO
+
+eureka:
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://eurekaserver:8070/eureka/

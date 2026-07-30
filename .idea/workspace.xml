@@ -7,26 +7,46 @@
     <option name="selectedModelId" value="auto" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e300e1cd-a8f0-47fb-bce0-7a2d77e6387d" name="Changes" comment="adiciona ms gatewayserver">
-      <change afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/mapper/SeatValidationMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/controller/integration/SeatIntegrationControllerImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/controller/integration/api/ISeatIntegrationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/exception/BusinessException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/integration/dto/SeatValidationItemDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/integration/dto/ValidateSeatsRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/service/ISeatIntegrationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/service/impl/SeatIntegrationServiceImpl.java" afterDir="false" />
+    <list default="true" id="e300e1cd-a8f0-47fb-bce0-7a2d77e6387d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/payments/src/main/java/com/teixaa/payments/entity/BaseEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payments/src/main/java/com/teixaa/payments/entity/Payment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payments/src/main/java/com/teixaa/payments/enums/PaymentStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payments/src/main/java/com/teixaa/payments/kafka/PaymentApprovedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payments/src/main/java/com/teixaa/payments/kafka/config/KafkaConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payments/src/main/java/com/teixaa/payments/kafka/topics/KafkaTopics.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payments/src/main/java/com/teixaa/payments/repository/PaymentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payments/src/main/resources/application-dev.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payments/src/main/resources/application-docker.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payments/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/audit/AuditorAwareImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/kafka/config/KafkaConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/kafka/config/KafkaProducerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/kafka/events/ReservationCreatedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/kafka/producer/ReservationProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/kafka/topics/KafkaTopics.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/mapper/ReservationEventMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/api/ISessionIntegrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/integration/api/ISessionIntegrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/integration/SessionIntegrationControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/java/com/teixaa/events/controller/integration/SessionIntegrationControllerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/integration/venue/VenueClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/integration/venue/VenueClientImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/integration/venue/VenueFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/integration/venue/VenueFeignClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/integration/venue/dto/SeatResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/integration/venue/dto/ValidateSeatsRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/integration/venue/dto/SectorResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/integration/venue/dto/SeatValidationItemRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/customer/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/customer/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/customer/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose/default/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/events/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/events/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/events/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/events/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/events/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatewayserver/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plan-reservation.prompt.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/mapper/ReservationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/mapper/ReservationMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/service/impl/PricingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/service/impl/PricingServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/service/impl/ReservationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/service/impl/ReservationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/validator/SeatValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/validator/SeatValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/repository/SeatRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/java/com/teixaa/venues/repository/SeatRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/src/main/resources/application-docker.yml" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/resources/application-docker.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venues/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/venues/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,8 +61,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Exception" />
+        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -98,10 +118,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Maven.customer [clean].executor": "Run",
+    "Maven.customer [install].executor": "Run",
     "Maven.eurekaserver [clean].executor": "Run",
     "Maven.eurekaserver [install].executor": "Run",
     "Maven.events [clean].executor": "Run",
     "Maven.events [install].executor": "Run",
+    "Maven.payments [clean].executor": "Run",
+    "Maven.payments [install].executor": "Run",
     "Maven.reservation [clean].executor": "Run",
     "Maven.reservation [compile].executor": "Run",
     "Maven.reservation [install].executor": "Run",
@@ -114,14 +138,15 @@
     "Spring Boot.EurekaserverApplication.executor": "Debug",
     "Spring Boot.EventsApplication.executor": "Debug",
     "Spring Boot.GatewayserverApplication.executor": "Debug",
+    "Spring Boot.PaymentsApplication.executor": "Debug",
     "Spring Boot.ReservationApplication.executor": "Debug",
     "Spring Boot.VenueApplication.executor": "Debug",
     "Spring Boot.VenuesApplication.executor": "Debug",
     "copilot.chat.legacySessionMetadata.migrated": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/DEV/workspaces/ingress/customer/src/main/resources",
-    "project.structure.last.edited": "Project",
+    "last_opened_file_path": "C:/DEV/workspaces/ingress/reservation/src/main/java/com/teixaa/reservation",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager"
@@ -129,27 +154,43 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\DEV\workspaces\ingress\reservation\src\main\java\com\teixaa\reservation" />
+      <recent name="C:\DEV\workspaces\ingress\payments\src\main\java\com\teixaa\payments\kafka" />
+      <recent name="C:\DEV\workspaces\ingress\payments\src\main\resources" />
+      <recent name="C:\DEV\workspaces\ingress\payments\src\main\resources\templates" />
       <recent name="C:\DEV\workspaces\ingress\customer\src\main\resources" />
-      <recent name="C:\DEV\workspaces\ingress\venues\src\main\resources" />
-      <recent name="C:\DEV\workspaces\ingress\events\src\main\resources" />
-      <recent name="C:\DEV\workspaces\ingress\events\src\main\resources\templates" />
-      <recent name="C:\DEV\workspaces\ingress\reservation" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\DEV\workspaces\ingress\events\src\main\resources" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.teixaa.reservation.mapper" />
+      <recent name="com.teixaa.events.mapper" />
       <recent name="com.teixaa.reservation.service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.teixaa.payments.entity" />
       <recent name="com.teixaa.venues.exception" />
       <recent name="com.teixaa.reservation.exception" />
       <recent name="com.teixaa.events.exception" />
       <recent name="com.teixaa.reservation.feign.enums" />
-      <recent name="com.teixaa.venue.exception" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.ReservationApplication">
+    <configuration name="CustomerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
+      <module name="customer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.teixaa.customer.CustomerApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.teixaa.customer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="EurekaserverApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
       <module name="eurekaserver" />
@@ -164,27 +205,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EventsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="PaymentsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
-      <module name="events" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.teixaa.events.EventsApplication" />
+      <module name="payments" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.teixaa.payments.PaymentsApplication" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.teixaa.events.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GatewayserverApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
-      <module name="gatewayserver" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.teixaa.gatewayserver.GatewayserverApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.teixaa.gatewayserver.*" />
+          <option name="PATTERN" value="com.teixaa.payments.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -223,10 +250,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.ReservationApplication" />
-        <item itemvalue="Spring Boot.GatewayserverApplication" />
-        <item itemvalue="Spring Boot.EventsApplication" />
-        <item itemvalue="Spring Boot.EurekaserverApplication" />
         <item itemvalue="Spring Boot.VenuesApplication" />
+        <item itemvalue="Spring Boot.EurekaserverApplication" />
+        <item itemvalue="Spring Boot.CustomerApplication" />
+        <item itemvalue="Spring Boot.PaymentsApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -381,7 +408,15 @@
       <option name="project" value="LOCAL" />
       <updated>1785359011246</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="adiciona inegracao do reservation com o venues para verificar validade do assento">
+      <option name="closed" value="true" />
+      <created>1785363175053</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1785363175053</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -402,17 +437,7 @@
     <MESSAGE value="ajusta schema e feign" />
     <MESSAGE value="adiciona docker e postgresql para ambiente com docker" />
     <MESSAGE value="adiciona ms gatewayserver" />
-    <option name="LAST_COMMIT_MESSAGE" value="adiciona ms gatewayserver" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/reservation/src/main/java/com/teixaa/reservation/controller/impl/ReservationControllerImpl.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="adiciona inegracao do reservation com o venues para verificar validade do assento" />
+    <option name="LAST_COMMIT_MESSAGE" value="adiciona inegracao do reservation com o venues para verificar validade do assento" />
   </component>
 </project>

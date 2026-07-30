@@ -8,6 +8,7 @@ import com.teixaa.reservation.integration.event.dto.SectorPriceIntegrationRespon
 import com.teixaa.reservation.integration.event.dto.SessionPriceIntegrationResponse;
 import com.teixaa.reservation.service.IPricingService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -18,6 +19,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class PricingServiceImpl implements IPricingService {
 
     private final EventClient eventClient;

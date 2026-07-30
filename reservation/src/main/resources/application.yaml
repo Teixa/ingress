@@ -7,13 +7,6 @@ spring:
   profiles:
     active: dev
 
-kafka:
-  bootstrap-servers: localhost:9092
-  topics:
-    reservation-created: reservation.created
-    reservation-confirmed: reservation.confirmed
-    reservation-expired: reservation.expired
-
 reservation:
   ttl-minutes: 15
   expiration:
@@ -25,15 +18,6 @@ feign:
       default:
         connectTimeout: 5000
         readTimeout: 10000
-
-eureka:
-  instance:
-    preferIpAddress: true
-  client:
-    fetchRegistry: true
-    registerWithEureka: true
-    serviceUrl:
-      defaultZone: http://localhost:8070/eureka/
 
 management:
   endpoints:
@@ -53,3 +37,15 @@ info:
     description: "Reservation microservice for Ingress ticketing system"
     version: "1.0.0"
 
+logging:
+  level:
+    root: INFO
+    com.teixaa: DEBUG
+    org.springframework.kafka: INFO
+
+eureka:
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://eurekaserver:8070/eureka/

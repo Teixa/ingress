@@ -6,6 +6,9 @@ import com.teixaa.reservation.entity.Reservation;
 import com.teixaa.reservation.enums.ReservationStatus;
 import com.teixaa.reservation.exception.BusinessException;
 import com.teixaa.reservation.exception.ResourceNotFoundException;
+import com.teixaa.reservation.kafka.events.ReservationCreatedEvent;
+import com.teixaa.reservation.kafka.producer.ReservationProducer;
+import com.teixaa.reservation.mapper.ReservationEventMapper;
 import com.teixaa.reservation.mapper.ReservationMapper;
 import com.teixaa.reservation.repository.ReservationRepository;
 import com.teixaa.reservation.service.IPricingService;
@@ -35,6 +38,8 @@ public class ReservationServiceImpl implements IReservationService {
     private final SessionValidator sessionValidator;
     private final IPricingService pricingService;
     private final SeatValidator seatValidator;
+    private final ReservationEventMapper reservationEventMapper;
+    private final ReservationProducer reservationProducer;
 
     @Override
     public ReservationResponseDto create(CreateReservationRequestDto request) {
@@ -52,7 +57,16 @@ public class ReservationServiceImpl implements IReservationService {
 
         pricingService.calculate(reservation);
 
-        reservationRepository.save(reservation);
+        reservation = reservationRepository.save(reservation);
+
+        log.info("Reservation ID: {}", reservation.getId());
+
+        ReservationCreatedEvent event =
+                reservationEventMapper.toCreatedEvent(reservation);
+
+        log.info("Reservation ID: {}", reservation.getId());
+
+        reservationProducer.publish(event);
 
         return reservationMapper.toResponse(reservation);
     }
